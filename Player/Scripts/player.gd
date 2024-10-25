@@ -38,10 +38,14 @@ func _process(delta: float) -> void:
 	
 	#If player presses right arrow key, direction.x will end up as 1. If press left, it will be -1.
 	#If they push both it will be zero.
-	direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
+	#irection.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	
 	#Do same for y
-	direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
+	#irection.y = Input.get_action_strength("down") - Input.get_action_strength("up")
+	
+	#This is a better implementation with normalization.
+	#If this line is not here, diagonal speed would be higher than single direction.
+	direction = Vector2(Input.get_axis("left","right"),Input.get_axis("up","down")).normalized()
 		
 	pass
 

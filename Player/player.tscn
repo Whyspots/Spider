@@ -138,6 +138,8 @@ _data = {
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 16
+motion_mode = 1
+wall_min_slide_angle = 0.174533
 script = ExtResource("1_mqew6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
