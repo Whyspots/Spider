@@ -1,15 +1,11 @@
-class_name State extends Node
+class_name State_Idle extends State
 
-#refers to a player object this state belongs to.
-static var player : Player
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@onready var walk: State_Walk = $"../Walk"
 
 
 #What happens when player enters state?
 func Enter() -> void:
+	player.UpdateAnimation("idle")
 	pass
 	
 
@@ -19,10 +15,15 @@ func Exit() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func Process( _delta : float ) -> State:
+	if player.direction != Vector2.ZERO:
+		return walk
+	player.velocity = Vector2.ZERO
 	return null
+	
 
 func Physics ( _delta : float ) -> State:
 	return null
 
 func HandleInput( event : InputEvent ) -> State:
 	return null
+	

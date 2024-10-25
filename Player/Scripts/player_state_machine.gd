@@ -22,7 +22,11 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	#Process requires a delta and returns either null or a state.
 	#This line notifies the machine if state changed or not.
-	ChangeState( current_state.Process( delta )  )
+	ChangeState( current_state.Physics( delta )  )
+	pass
+
+func _unhandled_input(event):
+	ChangeState(current_state.HandleInput(event))
 	pass
 
 func Initialize( _player : Player ) -> void:

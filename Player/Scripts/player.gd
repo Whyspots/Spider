@@ -1,22 +1,16 @@
 class_name Player extends CharacterBody2D
 
-# Movement variables. 
-
-	#The velocity modifyer.
-var move_speed : float = 100.0
-
 # Animation variables. 
 
 	# Establishes default direction for character in animation.
 var cardinal_direction : Vector2 = Vector2.DOWN
 
-	#Establishes the default state of the character.
-var state : String = "idle"
 
 	#Hold ctrl and drag the AnimationPlayer on the top right to create this:
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 	#Same thing for our sprite:
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var state_machine: PlayerStateMachine = $StateMachine
 
 
 
@@ -32,6 +26,8 @@ var direction : Vector2 = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#Self refers to the player object.
+	state_machine.Initialize(self)
 	pass # Replace with function body.
 
 
@@ -46,14 +42,6 @@ func _process(delta: float) -> void:
 	
 	#Do same for y
 	direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
-	
-	#Velocity is an inherent property for characterbody2d.
-	velocity = direction * move_speed
-	
-	#Animation functionality#############
-	#If either state OR direction changes, update the animation.
-	if SetState() == true || SetDirection() == true:
-		UpdateAnimation()
 		
 	pass
 
@@ -90,17 +78,6 @@ func SetDirection() -> bool:
 	sprite_2d.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
 	
 	return true
-
-#IF we actually change the state, it returns true.
-func SetState() -> bool:
-	#If we are not moving, the state is idle. else, it is walk.
-	var new_state : String = "idle" if direction == Vector2.ZERO else "walk"
-	
-	if new_state == state:
-		return false
-		
-	state = new_state
-	return true
 	
 #Turns vector2 objects into simple directional strings.
 func AnimDirection() -> String:
@@ -111,7 +88,7 @@ func AnimDirection() -> String:
 	else:
 		return "side"
 
-func UpdateAnimation() -> void:
+func UpdateAnimation( state : String ) -> void:
 	#State holds values such as idle, decides which animation category (ie idle,walk) to play.
 	animation_player.play( state + "_" + AnimDirection())
 	pass
