@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://ciinxo8ungh40"]
+
+[ext_resource type="Script" path="res://FearMeter/Scripts/fear_meter.gd" id="1_fu6j0"]
+[ext_resource type="Texture2D" uid="uid://cnqllqt2p61x4" path="res://FearMeter/spider-web-transparent-png-17.png" id="2_mka0u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m5n5e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c620"]
+bg_color = Color(0.766187, 0.417518, 0.954522, 1)
+shadow_color = Color(0, 0, 0, 0.27451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dbstn"]
+bg_color = Color(0.103744, 0.103744, 0.103743, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.27451)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cr3x"]
+bg_color = Color(0.38005, 0.365594, 0.745625, 1)
+
+[node name="FearMeter" type="ProgressBar"]
+z_index = 1
+offset_right = 48.0
+offset_bottom = 6.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_m5n5e")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4c620")
+value = 50.0
+show_percentage = false
+script = ExtResource("1_fu6j0")
+
+[node name="DamageBar" type="ProgressBar" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_dbstn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3cr3x")
+value = 80.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="Spider-web-transparent-png-17" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(0, 3)
+scale = Vector2(0.008, 0.008)
+texture = ExtResource("2_mka0u")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
