@@ -7,7 +7,7 @@ class_name State_Walk extends State
 #this current walk state returns null. We still need to return something
 #When player is not walking.
 @onready var idle: State = $"../Idle"
-
+@onready var attack: State = $"../Attack"
 
 #What happens when player enters state?
 func Enter() -> void:
@@ -34,6 +34,10 @@ func Process( _delta : float ) -> State:
 func Physics ( _delta : float ) -> State:
 	return null
 
-func HandleInput( event : InputEvent ) -> State:
+func HandleInput( _event : InputEvent ) -> State:
+	#If the player presses attack key Z in idle state
+	if _event.is_action_pressed("attack"):
+		return attack
+		
 	return null
 	
