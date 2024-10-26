@@ -16,7 +16,9 @@ var fear:float = 0 : set = _update_fear
 # Initializes a fear bar with value 0 and a given max_value
 func init_fear_bar(_max:float):
 	value = 0
+	damage_bar.value = 0
 	max_value = _max
+	damage_bar.max_value = _max
 
 # Set fear to new value
 func _update_fear(new_fear):
