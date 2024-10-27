@@ -7,6 +7,14 @@ signal level_loaded
 # Initial player spawn offset
 var position_offset : Vector2
 
+# Signal to check for changed camera bounds
+signal tilemap_bounds_changed( bounds : Array[ Vector2 ])
+
+# The current bounds for the player's camera
+var current_tilemap_bounds : Array[ Vector2 ]
+
+
+
 func _ready() -> void:
 	await get_tree().process_frame
 	level_loaded.emit()
@@ -33,4 +41,6 @@ func load_new_level(
 	
 	pass
 	
-	 
+func change_tilemap_bounds( bounds : Array[ Vector2 ]) -> void:
+	current_tilemap_bounds = bounds
+	tilemap_bounds_changed.emit( bounds )

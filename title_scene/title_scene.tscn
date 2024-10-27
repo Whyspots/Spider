@@ -76,9 +76,11 @@ hframes = 4
 vframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/Sprite2D"]
+process_mode = 3
 libraries = {
 "": SubResource("AnimationLibrary_ojcpi")
 }
+autoplay = "default"
 
 [node name="QuitPopup" type="ConfirmationDialog" parent="CanvasLayer/Control"]
 title = "Quit?"
@@ -127,6 +129,7 @@ max_polyphony = 4
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qhjqi")
+autoplay = true
 parameters/looping = true
 
 [node name="HoverSound" type="AudioStreamPlayer" parent="."]
