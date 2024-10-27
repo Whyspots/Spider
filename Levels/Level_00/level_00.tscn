@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dodi263wr6h7t"]
+
+[ext_resource type="Script" path="res://Levels/Scripts/level.gd" id="1_sinoy"]
+[ext_resource type="PackedScene" uid="uid://qriwe38yj2op" path="res://Tile Maps/ground_01.tscn" id="2_vlxui"]
+[ext_resource type="PackedScene" uid="uid://bhyp0o2w0tp4q" path="res://Levels/player_spawn.tscn" id="3_n100n"]
+
+[node name="Playground" type="Node2D"]
+script = ExtResource("1_sinoy")
+
+[node name="Ground01" parent="." instance=ExtResource("2_vlxui")]
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("3_n100n")]
+position = Vector2(263, 385)
