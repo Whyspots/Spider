@@ -26,4 +26,4 @@ Kailey Caballero - Animation, 2D art\
 Lucas Guerra - Composer\
 Sol FitzGerald - Composer\
 Tarun Nagesh - Developer\
-Utkarsh - Developer 
+Utkarsh Dev - Developer 
