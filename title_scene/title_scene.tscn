@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkr3kdbulofhd"]
+
+[ext_resource type="Script" path="res://title_scene/title_scene.gd" id="1_ceiqb"]
+[ext_resource type="Texture2D" uid="uid://bw4c5d5sy81u6" path="res://title_scene/Sprites/title.png" id="1_ked4a"]
+[ext_resource type="AudioStream" uid="uid://bn72es3njtlrt" path="res://title_scene/Audio/motif1_mainTheme_lguerra.mp3" id="2_qhjqi"]
+[ext_resource type="AudioStream" uid="uid://bb65awp41ebys" path="res://title_scene/Audio/menu_focus.wav" id="3_vji23"]
+[ext_resource type="AudioStream" uid="uid://b7vqdlptvnxlq" path="res://title_scene/Audio/menu_select.wav" id="4_pn16t"]
+
+[sub_resource type="Animation" id="Animation_qxprg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_wtc5u"]
+resource_name = "default"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 4.96418, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 0, 0, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ojcpi"]
+_data = {
+"RESET": SubResource("Animation_qxprg"),
+"default": SubResource("Animation_wtc5u")
+}
+
+[node name="TitleScene" type="Node2D"]
+script = ExtResource("1_ceiqb")
+music = ExtResource("2_qhjqi")
+button_hover_sound = ExtResource("3_vji23")
+button_select_sound = ExtResource("4_pn16t")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Filter" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.392157)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(240, 70)
+texture = ExtResource("1_ked4a")
+hframes = 4
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_ojcpi")
+}
+
+[node name="QuitPopup" type="ConfirmationDialog" parent="CanvasLayer/Control"]
+title = "Quit?"
+initial_position = 1
+always_on_top = true
+ok_button_text = "Yes"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -106.0
+offset_top = -144.0
+offset_right = 106.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="NewGame" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "New Game"
+expand_icon = true
+
+[node name="Continue" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+expand_icon = true
+
+[node name="Settings" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "Settings
+"
+expand_icon = true
+
+[node name="Quit" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+expand_icon = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 4
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qhjqi")
+parameters/looping = true
+
+[connection signal="confirmed" from="CanvasLayer/Control/QuitPopup" to="." method="_on_quit_popup_confirmed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
