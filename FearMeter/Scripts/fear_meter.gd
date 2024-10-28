@@ -124,7 +124,7 @@ func _on_decay_delay_timer_timeout() -> void:
 	current_decay_rate = base_decay_rate
 
 ## TEMPORARY TESTING FUNCTIONS
-
+'''
 func test_function():
 	init_fear_bar(100, 10, 0.1, 5)
 	self.set("fear", 20)
@@ -137,3 +137,4 @@ func _input(event: InputEvent) -> void:
 		test_function()
 	if Input.is_action_just_pressed("attack"):
 		test_function2()
+'''
