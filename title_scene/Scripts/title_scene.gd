@@ -13,7 +13,6 @@ const START_LEVEL : String = "res://Levels/Level_00/level_00.tscn"
 @onready var music_player: AudioStreamPlayer = $MusicPlayer
 @onready var hover_sound: AudioStreamPlayer = $HoverSound
 
-
 # Confirmation dialog for quitting
 @onready var quit_popup: ConfirmationDialog = $CanvasLayer/Control/QuitPopup
 
@@ -22,6 +21,10 @@ const START_LEVEL : String = "res://Levels/Level_00/level_00.tscn"
 @onready var button_continue: Button = $CanvasLayer/Control/VBoxContainer/Continue
 @onready var button_settings: Button = $CanvasLayer/Control/VBoxContainer/Settings
 @onready var button_quit: Button = $CanvasLayer/Control/VBoxContainer/Quit
+
+# Title screen anim
+@onready var animation_player: AnimationPlayer = $CanvasLayer/Control/Sprite2D/AnimationPlayer
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,9 +39,6 @@ func _ready() -> void:
 
 # Driver to set up the title scene
 func setup_title_screen() -> void:
-	# Play music!
-	music_player.play()
-	
 	# Start with focus on the new game button
 	button_new_game.grab_focus()
 	
