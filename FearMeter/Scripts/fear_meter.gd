@@ -76,7 +76,7 @@ func _update_fear(new_fear):
 	# If fear increases, lag increase. If fear decreases, instantly decrease.
 	if fear > prev_fear:
 		timer.start()
-	else:
+	elif fear < prev_fear:
 		value = fear
 
 # Handle decay pausing based on change in fear
