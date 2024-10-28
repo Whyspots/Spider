@@ -59,7 +59,8 @@ func _update_fear(new_fear):
 	if (new_fear > max_value):
 		new_fear = max_value
 	
-	handle_decay_pause(new_fear, prev_fear)
+	if (new_fear > prev_fear + 0.001 or new_fear < prev_fear - 0.001 ):
+		handle_decay_pause(new_fear, prev_fear)
 	
 	fear = max(0, new_fear) # Ensure fear is nonnegative
 	damage_bar.value = fear 
@@ -71,7 +72,7 @@ func _update_fear(new_fear):
 		self.visible = true
 		if (prev_fear == 0):
 			fade_in()
-		
+
 	# If fear increases, lag increase. If fear decreases, instantly decrease.
 	if fear > prev_fear:
 		timer.start()
@@ -82,17 +83,23 @@ func _update_fear(new_fear):
 func handle_decay_pause(new_fear : float, prev_fear : float):
 	# If fear hits the limit, stop adding fear and kill within given window
 	if (new_fear >= max_value):
+		decay_delay_timer.stop()
 		decay_delay_timer.start(kill_window)
+		current_decay_rate = 0
 	# If a positive amount of fear was instilled
 	elif (new_fear > prev_fear):
 		# Temporarily pause the fear decay based on amount of fear and scale
 		var time_to_pause : float = (new_fear - prev_fear) * decay_scale
 		# If decay not currently paused, pause it
 		if (decay_delay_timer.is_stopped()):
+			current_decay_rate = 0
 			decay_delay_timer.start(time_to_pause)
 		else: # If decay paused, add time to pause
 			var current : float = decay_delay_timer.get_time_left()
-			decay_delay_timer.set_wait_time(time_to_pause + current)
+			decay_delay_timer.stop()
+			decay_delay_timer.start(time_to_pause + current)
+			current_decay_rate = 0
+			
 
 
 func fade_out():
@@ -115,7 +122,7 @@ func _on_decay_delay_timer_timeout() -> void:
 ## TEMPORARY TESTING FUNCTIONS
 
 func test_function():
-	init_fear_bar(100, 10, 0.5, 0.1)
+	init_fear_bar(100, 10, 0.5, 1)
 	self.set("fear", 20)
 	
 func test_function2():

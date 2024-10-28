@@ -9,36 +9,6 @@
 radius = 5.0
 height = 24.0
 
-[sub_resource type="Animation" id="Animation_l588l"]
-resource_name = "idle_down"
-length = 0.4
-loop_mode = 2
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -19)]
-}
-
 [sub_resource type="Animation" id="Animation_1p7xl"]
 length = 0.001
 tracks/0/type = "value"
@@ -66,11 +36,11 @@ tracks/1/keys = {
 "values": [Vector2(0, -19)]
 }
 
-[sub_resource type="Animation" id="Animation_vk8nb"]
-resource_name = "idle_up"
+[sub_resource type="Animation" id="Animation_l588l"]
+resource_name = "idle_down"
 length = 0.4
 loop_mode = 2
-step = 0.2
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -81,7 +51,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [3, 4, 5]
+"values": [0, 1, 2]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -126,6 +96,36 @@ tracks/1/keys = {
 "values": [Vector2(0, -19)]
 }
 
+[sub_resource type="Animation" id="Animation_vk8nb"]
+resource_name = "idle_up"
+length = 0.4
+loop_mode = 2
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -19)]
+}
+
 [sub_resource type="Animation" id="Animation_uymuv"]
 resource_name = "walk_down"
 length = 0.7
@@ -156,36 +156,6 @@ tracks/1/keys = {
 "values": [Vector2(0, -19), Vector2(0, -19), Vector2(0, -23), Vector2(0, -19)]
 }
 
-[sub_resource type="Animation" id="Animation_m3ofq"]
-resource_name = "walk_up"
-length = 0.7
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [12, 13, 14, 12]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5, 0.7),
-"transitions": PackedFloat32Array(-2, -2, -2, -2),
-"update": 0,
-"values": [Vector2(0, -19), Vector2(0, -19), Vector2(0, -23), Vector2(0, -19)]
-}
-
 [sub_resource type="Animation" id="Animation_62or7"]
 resource_name = "walk_side"
 length = 0.7
@@ -202,6 +172,36 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [15, 16, 17, 15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.7),
+"transitions": PackedFloat32Array(-2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(0, -19), Vector2(0, -19), Vector2(0, -23), Vector2(0, -19)]
+}
+
+[sub_resource type="Animation" id="Animation_m3ofq"]
+resource_name = "walk_up"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 12]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
