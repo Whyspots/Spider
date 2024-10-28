@@ -83,6 +83,7 @@ func _update_fear(new_fear):
 func handle_decay_pause(new_fear : float, prev_fear : float):
 	# If fear hits the limit, stop adding fear and kill within given window
 	if (new_fear >= max_value):
+		animation_player.play("bar_full")
 		decay_delay_timer.stop()
 		decay_delay_timer.start(kill_window)
 		current_decay_rate = 0
@@ -117,12 +118,15 @@ func _on_timer_timeout():
 	value = fear
 
 func _on_decay_delay_timer_timeout() -> void:
+	if (animation_player.current_animation == "bar_full"):
+		animation_player.stop()
+	
 	current_decay_rate = base_decay_rate
 
 ## TEMPORARY TESTING FUNCTIONS
 
 func test_function():
-	init_fear_bar(100, 10, 0.5, 1)
+	init_fear_bar(100, 10, 0.1, 5)
 	self.set("fear", 20)
 	
 func test_function2():

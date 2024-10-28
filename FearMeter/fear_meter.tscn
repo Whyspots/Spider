@@ -97,6 +97,7 @@ _data = {
 
 [node name="FearMeter" type="ProgressBar"]
 z_index = 1
+y_sort_enabled = true
 offset_right = 48.0
 offset_bottom = 6.0
 theme_override_styles/background = SubResource("StyleBoxEmpty_m5n5e")
@@ -123,7 +124,7 @@ wait_time = 0.4
 one_shot = true
 
 [node name="Spider-web-transparent-png-17" type="Sprite2D" parent="."]
-z_index = -2
+z_index = -1
 position = Vector2(0, 3)
 scale = Vector2(0.008, 0.008)
 texture = ExtResource("2_mka0u")
