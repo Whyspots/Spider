@@ -54,7 +54,7 @@ func init_fear_bar(
 
 # Set fear to new value
 func _update_fear(new_fear):
-	var prev_fear:int = fear
+	var prev_fear:float = fear
 	# Cap new fear to maximum
 	if (new_fear > max_value):
 		new_fear = max_value
@@ -65,11 +65,13 @@ func _update_fear(new_fear):
 	damage_bar.value = fear 
 	
 	# Remove the ui from view if fear <= 0
-	if fear <= 0:
-		fade_bar() 
-	else: 
+	if fear <= 0 and prev_fear > 0:
+		fade_out()
+	elif fear > 0: 
 		self.visible = true
-	
+		if (prev_fear == 0):
+			fade_in()
+		
 	# If fear increases, lag increase. If fear decreases, instantly decrease.
 	if fear > prev_fear:
 		timer.start()
@@ -92,9 +94,15 @@ func handle_decay_pause(new_fear : float, prev_fear : float):
 			var current : float = decay_delay_timer.get_time_left()
 			decay_delay_timer.set_wait_time(time_to_pause + current)
 
-# Processes fading the bar out when it reaches zero
-func fade_bar():
-	animation_player.play()
+
+func fade_out():
+	animation_player.play("fade_out")
+	await animation_player.animation_finished
+	self.visible = false
+
+func fade_in():
+	animation_player.play("fade_in")
+	await animation_player.animation_finished
 
 # When the previously set timer reaches 0, 
 # the fear meter UI catches up with the damage bar
@@ -104,6 +112,17 @@ func _on_timer_timeout():
 func _on_decay_delay_timer_timeout() -> void:
 	current_decay_rate = base_decay_rate
 
-# Checks when the animation finishes to make the bar invisible
-func _on_fade_animation_finished(anim_name: StringName) -> void:
-	self.visible = false
+## TEMPORARY TESTING FUNCTIONS
+
+func test_function():
+	init_fear_bar(100, 10, 0.5, 0.1)
+	self.set("fear", 20)
+	
+func test_function2():
+	self.set("fear", 30 + self.fear)
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("test"):
+		test_function()
+	if Input.is_action_just_pressed("attack"):
+		test_function2()
