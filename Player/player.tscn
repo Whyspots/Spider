@@ -486,4 +486,4 @@ max_polyphony = 4
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 texture = ExtResource("11_d767x")
-texture_scale = 0.7
+texture_scale = 0.75
