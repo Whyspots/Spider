@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://dodi263wr6h7t"]
+
+[ext_resource type="Script" path="res://Levels/Scripts/level.gd" id="1_sinoy"]
+[ext_resource type="PackedScene" uid="uid://qriwe38yj2op" path="res://Tile Maps/ground_01.tscn" id="2_vlxui"]
+[ext_resource type="PackedScene" uid="uid://bhyp0o2w0tp4q" path="res://Levels/player_spawn.tscn" id="3_n100n"]
+[ext_resource type="PackedScene" uid="uid://on6degdt1i4o" path="res://Enemies/Scientist/Scientist.tscn" id="4_keyd6"]
+
+[node name="Playground" type="Node2D"]
+script = ExtResource("1_sinoy")
+
+[node name="Ground01" parent="." instance=ExtResource("2_vlxui")]
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("3_n100n")]
+position = Vector2(263, 385)
+
+[node name="Scientist" parent="." instance=ExtResource("4_keyd6")]
+position = Vector2(944, 228)

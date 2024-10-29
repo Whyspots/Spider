@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnqllqt2p61x4"
-path="res://.godot/imported/spider-web-transparent-png-17.png-6f2b92861ea505a3725480732437b328.ctex"
+uid="uid://dk2nfcij6c75j"
+path="res://.godot/imported/Slime.png-9ecdefbca124a41dd304b5c89ffdb1f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FearMeter/spider-web-transparent-png-17.png"
-dest_files=["res://.godot/imported/spider-web-transparent-png-17.png-6f2b92861ea505a3725480732437b328.ctex"]
+source_file="res://Enemies/Scientist/Slime.png"
+dest_files=["res://.godot/imported/Slime.png-9ecdefbca124a41dd304b5c89ffdb1f9.ctex"]
 
 [params]
 

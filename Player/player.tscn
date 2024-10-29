@@ -5,9 +5,9 @@
 [ext_resource type="Script" path="res://Player/Scripts/player_state_machine.gd" id="3_6d0f4"]
 [ext_resource type="Texture2D" uid="uid://1fgw3r56s0iy" path="res://Player/Sprites/Shadow.png" id="3_tfffs"]
 [ext_resource type="Texture2D" uid="uid://dcd5avhhkwaau" path="res://Player/Sprites/AttackSprite01.png" id="3_ucn18"]
-[ext_resource type="Script" path="res://Player/Scripts/state_idle.gd" id="4_stja5"]
-[ext_resource type="Script" path="res://Player/Scripts/state_walk.gd" id="5_bfv7h"]
-[ext_resource type="Script" path="res://Player/Scripts/state_attack.gd" id="6_0tqog"]
+[ext_resource type="Script" path="res://Player/Scripts/States/state_idle.gd" id="4_stja5"]
+[ext_resource type="Script" path="res://Player/Scripts/States/state_walk.gd" id="5_bfv7h"]
+[ext_resource type="Script" path="res://Player/Scripts/States/state_attack.gd" id="6_0tqog"]
 [ext_resource type="AudioStream" uid="uid://btrx2ysiamnsf" path="res://Player/Audio/SwordSwoosh.wav" id="8_hpqfb"]
 [ext_resource type="Script" path="res://Player/Scripts/player_camera.gd" id="10_nm2ky"]
 
