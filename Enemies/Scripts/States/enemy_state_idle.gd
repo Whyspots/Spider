@@ -6,7 +6,8 @@ class_name EnemyStateIdle extends EnemyState
 @export_category("AI")
 @export var state_duration_min : float = 0.5
 @export var state_duration_max : float = 1.5
-@export var after_idle_state : EnemyState
+@export var next_possible_state_1 : EnemyState
+@export var next_possible_state_2 : EnemyState
 
 var _timer : float = 0.0
 
@@ -31,7 +32,10 @@ func process( _delta : float ) -> EnemyState:
 	_timer -= _delta
 	
 	if _timer <= 0:
-		return after_idle_state
+		if (randi_range(0, 1) == 0):
+			return next_possible_state_2
+		else:
+			return next_possible_state_1
 		
 	return null
 

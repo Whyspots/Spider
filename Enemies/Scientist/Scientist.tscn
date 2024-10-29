@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://on6degdt1i4o"]
+[gd_scene load_steps=18 format=3 uid="uid://on6degdt1i4o"]
 
 [ext_resource type="Script" path="res://Enemies/Scripts/enemy.gd" id="1_01bls"]
 [ext_resource type="Texture2D" uid="uid://1fgw3r56s0iy" path="res://Player/Sprites/Shadow.png" id="1_iw5pk"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Enemies/Scripts/enemy_state_machine.gd" id="5_yn7mp"]
 [ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_idle.gd" id="6_vlgxa"]
 [ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_wander.gd" id="7_44ejo"]
+[ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_navigate.gd" id="8_lgyf4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dgrff"]
 radius = 5.0
@@ -266,11 +267,25 @@ offset_bottom = 16.0
 [node name="EnemyStateMachine" type="Node" parent="."]
 script = ExtResource("5_yn7mp")
 
-[node name="Idle" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("after_idle_state")]
+[node name="Idle" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_possible_state_1", "next_possible_state_2")]
 script = ExtResource("6_vlgxa")
-after_idle_state = NodePath("../Wander")
+next_possible_state_1 = NodePath("../Wander")
+next_possible_state_2 = NodePath("../Navigate")
 
 [node name="Wander" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("7_44ejo")
 wander_speed = 30.0
 next_state = NodePath("../Idle")
+
+[node name="Navigate" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("8_lgyf4")
+navigate_speed = 40.0
+navigation_rooms = Array[String](["Office", "BreakRoom", "Lab"])
+next_state = NodePath("../Idle")
+
+[node name="NavigationAgent" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+debug_path_custom_color = Color(0, 1, 0.541176, 1)
+
+[connection signal="navigation_finished" from="NavigationAgent" to="EnemyStateMachine/Navigate" method="_on_navigation_agent_navigation_finished"]
+[connection signal="target_reached" from="NavigationAgent" to="EnemyStateMachine/Navigate" method="_on_navigation_agent_target_reached"]

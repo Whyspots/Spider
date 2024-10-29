@@ -23,17 +23,24 @@ const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP ]
 ## to kill the [Enemy] 
 @export var kill_window : float
 
+
 var cardinal_direction : Vector2 = Vector2.DOWN
 var direction : Vector2 = Vector2.ZERO
 var player : Player
 var invulnerable : bool = false
+var navigation_points : Dictionary = {}
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var sprite : Sprite2D = $Sprite2D
 #@onready var hit_box : HitBox = $HitBox
 @onready var state_machine : EnemyStateMachine = $EnemyStateMachine
+@onready var navigation_agent: NavigationAgent2D = $NavigationAgent
 
 func _ready() -> void:
+	for point in get_parent().get_children():
+		if point.is_in_group("Navigation Points"):
+			navigation_points[point.get_name()] = point.get_global_position()
+	
 	state_machine.initialize(self)
 	player = PlayerManager.player 
 	
@@ -74,3 +81,7 @@ func anim_direction() -> String:
 		return "up"
 	else:
 		return "side"
+
+func navigate_to_room(room : String) -> void:
+	var destination : Vector2 = navigation_points[room]
+	navigation_agent.set_target_position(destination)

@@ -34,6 +34,10 @@ window/stretch/mode="canvas_items"
 
 movie_writer/movie_file="C:/Users/theha/Downloads/project_progress.avi"
 
+[global_group]
+
+"Navigation Points"="Nodes that act as navigation points for enemies."
+
 [input]
 
 up={
