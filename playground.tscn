@@ -1,11 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://snnwctiiu04f"]
+[gd_scene load_steps=7 format=3 uid="uid://snnwctiiu04f"]
 
 [ext_resource type="PackedScene" uid="uid://dpbxurc1g2pbd" path="res://Player/player.tscn" id="1_yrdkq"]
 [ext_resource type="PackedScene" uid="uid://6en8mayikw0n" path="res://Tile Maps/ground_01.tscn" id="2_xc3ma"]
+[ext_resource type="Texture2D" uid="uid://h2efprr2blfx" path="res://table.png" id="3_1oib4"]
+[ext_resource type="Texture2D" path="res://spiderspritefinal.png" id="3_ih2n6"]
+[ext_resource type="Texture2D" uid="uid://beme2dn2i36fd" path="res://skeletonmodel.png" id="5_mkx85"]
+[ext_resource type="Texture2D" uid="uid://df0k2pgat3ijm" path="res://vial.png" id="6_3iwfi"]
 
 [node name="Playground" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_yrdkq")]
-position = Vector2(175, 182)
+position = Vector2(1413, 1410)
 
 [node name="Ground01" parent="." instance=ExtResource("2_xc3ma")]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(1669, 1392)
+scale = Vector2(0.506101, 0.586088)
+texture = ExtResource("3_1oib4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1507, 1179)
+scale = Vector2(0.467796, 0.467524)
+texture = ExtResource("3_ih2n6")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1403, 1085)
+scale = Vector2(0.388925, 0.377715)
+texture = ExtResource("5_mkx85")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1665, 1109)
+scale = Vector2(0.428, 0.436001)
+texture = ExtResource("6_3iwfi")
