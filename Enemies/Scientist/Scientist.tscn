@@ -280,7 +280,6 @@ next_state = NodePath("../Idle")
 [node name="Navigate" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("8_lgyf4")
 navigate_speed = 40.0
-navigation_rooms = Array[String](["Office", "BreakRoom", "Lab"])
 next_state = NodePath("../Idle")
 
 [node name="NavigationAgent" type="NavigationAgent2D" parent="."]

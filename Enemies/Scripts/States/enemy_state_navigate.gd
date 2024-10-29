@@ -5,10 +5,9 @@ class_name EnemyStateNavigate extends EnemyState
 @export var navigate_speed : float = 20.0
 
 @export_category("AI")
-@export var navigation_rooms : Array[String] = []
-@export var state_animation_duration : float = 0.7
-@export var state_cycle_min : int = 1
-@export var state_cycle_max : int = 3
+#@export var state_animation_duration : float = 0.7
+#@export var state_cycle_min : int = 1
+#@export var state_cycle_max : int = 3
 @export var next_state : EnemyState
 
 var _timer : float = 0.0
@@ -16,9 +15,11 @@ var _direction : Vector2
 var _finished = false
 var _room_index = 0
 var _room_iteration_constant = 1
+var navigation_rooms : Array[String] = []
 
 ## What happens when we initialize this [EnemyState]?
 func init() -> void:
+	navigation_rooms = enemy.navigation_rooms
 	pass
 
 ## What happens when enemy enters [EnemyState]?

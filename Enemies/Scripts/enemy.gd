@@ -6,7 +6,6 @@ signal enemy_fear_instilled()
 
 const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP ]
 
-
 @onready var fear_meter : FearMeter = $FearMeter
 
 # Fear variables
@@ -23,6 +22,10 @@ const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP ]
 ## to kill the [Enemy] 
 @export var kill_window : float
 
+# Navigation and Pathfinding
+@export_group("Navigation")
+## An ordered array defining which rooms the enemy should navigate through
+@export var navigation_rooms : Array[String] = []
 
 var cardinal_direction : Vector2 = Vector2.DOWN
 var direction : Vector2 = Vector2.ZERO

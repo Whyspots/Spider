@@ -36,3 +36,4 @@ position = Vector2(277, 326)
 
 [node name="Scientist" parent="." instance=ExtResource("4_keyd6")]
 position = Vector2(955, 363)
+navigation_rooms = Array[String](["Office", "BreakRoom", "Lab"])
