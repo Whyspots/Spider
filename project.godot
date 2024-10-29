@@ -11,9 +11,16 @@ config_version=5
 [application]
 
 config/name="samplegame"
-run/main_scene="res://playground.tscn"
+run/main_scene="res://title_scene/title_scene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SaveSystem="*res://addons/save_system/save_system.gd"
+PlayerManager="*res://00_Globals/global_player_manager.gd"
+LevelManager="*res://00_Globals/global_level_manager.gd"
+SceneTransition="*res://GUI/scene_transition/scene_transition.tscn"
 
 [display]
 
@@ -22,6 +29,10 @@ window/size/viewport_height=270
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="viewport"
+
+[editor]
+
+movie_writer/movie_file="C:/Users/theha/Downloads/project_progress.avi"
 
 [input]
 

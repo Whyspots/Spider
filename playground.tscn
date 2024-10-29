@@ -1,11 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://snnwctiiu04f"]
 
 [ext_resource type="PackedScene" uid="uid://dpbxurc1g2pbd" path="res://Player/player.tscn" id="1_yrdkq"]
+
 [ext_resource type="PackedScene" uid="uid://6en8mayikw0n" path="res://Tile Maps/ground_01.tscn" id="2_xc3ma"]
 [ext_resource type="Texture2D" uid="uid://h2efprr2blfx" path="res://table.png" id="3_1oib4"]
 [ext_resource type="Texture2D" path="res://spiderspritefinal.png" id="3_ih2n6"]
 [ext_resource type="Texture2D" uid="uid://beme2dn2i36fd" path="res://skeletonmodel.png" id="5_mkx85"]
 [ext_resource type="Texture2D" uid="uid://df0k2pgat3ijm" path="res://vial.png" id="6_3iwfi"]
+
 
 [node name="Playground" type="Node2D"]
 
