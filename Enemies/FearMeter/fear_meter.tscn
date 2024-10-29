@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://ciinxo8ungh40"]
 
-[ext_resource type="Script" path="res://FearMeter/Scripts/fear_meter.gd" id="1_fu6j0"]
-[ext_resource type="Texture2D" uid="uid://cnqllqt2p61x4" path="res://FearMeter/spider-web-transparent-png-17.png" id="2_mka0u"]
+[ext_resource type="Script" path="res://Enemies/FearMeter/Scripts/fear_meter.gd" id="1_fu6j0"]
+[ext_resource type="Texture2D" uid="uid://cnqllqt2p61x4" path="res://Enemies/FearMeter/spider-web-transparent-png-17.png" id="2_mka0u"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m5n5e"]
 
@@ -124,7 +124,7 @@ wait_time = 0.4
 one_shot = true
 
 [node name="Spider-web-transparent-png-17" type="Sprite2D" parent="."]
-z_index = -1
+z_index = -2
 position = Vector2(0, 3)
 scale = Vector2(0.008, 0.008)
 texture = ExtResource("2_mka0u")

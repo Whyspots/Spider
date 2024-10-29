@@ -1,9 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://on6degdt1i4o"]
+[gd_scene load_steps=17 format=3 uid="uid://on6degdt1i4o"]
 
 [ext_resource type="Script" path="res://Enemies/Scripts/enemy.gd" id="1_01bls"]
 [ext_resource type="Texture2D" uid="uid://1fgw3r56s0iy" path="res://Player/Sprites/Shadow.png" id="1_iw5pk"]
 [ext_resource type="Texture2D" uid="uid://dk2nfcij6c75j" path="res://Enemies/Scientist/Slime.png" id="2_xllfl"]
-[ext_resource type="PackedScene" uid="uid://ciinxo8ungh40" path="res://FearMeter/fear_meter.tscn" id="4_j46bs"]
+[ext_resource type="PackedScene" uid="uid://ciinxo8ungh40" path="res://Enemies/FearMeter/fear_meter.tscn" id="4_j46bs"]
+[ext_resource type="Script" path="res://Enemies/Scripts/enemy_state_machine.gd" id="5_yn7mp"]
+[ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_idle.gd" id="6_vlgxa"]
+[ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_wander.gd" id="7_44ejo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dgrff"]
 radius = 5.0
@@ -232,7 +235,6 @@ collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_01bls")
 max_fear = 100.0
-base_fear_decay = 0.5
 
 [node name="ShadowSprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -260,3 +262,15 @@ offset_left = -24.0
 offset_top = 10.0
 offset_right = 24.0
 offset_bottom = 16.0
+
+[node name="EnemyStateMachine" type="Node" parent="."]
+script = ExtResource("5_yn7mp")
+
+[node name="Idle" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("after_idle_state")]
+script = ExtResource("6_vlgxa")
+after_idle_state = NodePath("../Wander")
+
+[node name="Wander" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("7_44ejo")
+wander_speed = 30.0
+next_state = NodePath("../Idle")
