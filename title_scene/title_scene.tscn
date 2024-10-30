@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkr3kdbulofhd"]
+[gd_scene load_steps=16 format=3 uid="uid://bkr3kdbulofhd"]
 
 [ext_resource type="Script" path="res://title_scene/Scripts/title_scene.gd" id="1_ceiqb"]
-[ext_resource type="Texture2D" uid="uid://bw4c5d5sy81u6" path="res://title_scene/Sprites/title.png" id="1_ked4a"]
 [ext_resource type="AudioStream" uid="uid://bn72es3njtlrt" path="res://title_scene/Audio/motif1_mainTheme_lguerra.mp3" id="2_qhjqi"]
-[ext_resource type="AudioStream" uid="uid://bb65awp41ebys" path="res://title_scene/Audio/menu_focus.wav" id="3_vji23"]
-[ext_resource type="AudioStream" uid="uid://b7vqdlptvnxlq" path="res://title_scene/Audio/menu_select.wav" id="4_pn16t"]
+[ext_resource type="Texture2D" uid="uid://b3judwsgyud61" path="res://title_scene/Sprites/menubgwithoutparticles.png" id="2_v85tk"]
+[ext_resource type="AudioStream" uid="uid://b4od2cdflejgo" path="res://title_scene/Audio/sfx_menu_select.mp3" id="3_5dm4c"]
+[ext_resource type="Texture2D" uid="uid://du1fqmmqe1ied" path="res://title_scene/Sprites/menusplash.png" id="3_42ycl"]
+[ext_resource type="Texture2D" uid="uid://ddu0b8wd2gake" path="res://title_scene/Sprites/circle.png" id="4_b1yed"]
+[ext_resource type="AudioStream" uid="uid://don4v4h4wq7a7" path="res://title_scene/Audio/sfx_menu_hover.mp3" id="5_5vmf5"]
 
 [sub_resource type="Animation" id="Animation_qxprg"]
 length = 0.001
@@ -46,9 +48,43 @@ _data = {
 "default": SubResource("Animation_wtc5u")
 }
 
+[sub_resource type="Gradient" id="Gradient_crh3e"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_h5riq"]
+gradient = SubResource("Gradient_crh3e")
+
+[sub_resource type="Curve" id="Curve_2e2dq"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.26087, 1), 0.0, 0.0, 0, 0, Vector2(0.73913, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_3t4xl"]
+curve = SubResource("Curve_2e2dq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l720e"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 128.0
+direction = Vector3(0, -1, 0)
+initial_velocity_max = 103.45
+gravity = Vector3(0, -150, 0)
+radial_accel_min = -14.95
+radial_accel_max = 31.03
+scale_min = 0.2
+scale_max = 0.2
+scale_curve = SubResource("CurveTexture_3t4xl")
+color = Color(1, 0, 1, 1)
+color_ramp = SubResource("GradientTexture1D_h5riq")
+hue_variation_min = -2.23517e-08
+hue_variation_max = 0.13
+turbulence_enabled = true
+
 [node name="TitleScene" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_ceiqb")
+
+[node name="Node2D" type="Sprite2D" parent="."]
+scale = Vector2(0.250324, 0.250324)
+texture = ExtResource("2_v85tk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -60,20 +96,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Filter" type="ColorRect" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 1, 0.392157)
-
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control"]
-position = Vector2(240, 70)
-texture = ExtResource("1_ked4a")
-hframes = 4
-vframes = 2
+position = Vector2(240, 135)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_42ycl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/Sprite2D"]
 process_mode = 3
@@ -85,21 +111,17 @@ autoplay = "default"
 [node name="QuitPopup" type="ConfirmationDialog" parent="CanvasLayer/Control"]
 title = "Quit?"
 initial_position = 1
-always_on_top = true
 ok_button_text = "Yes"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -106.0
-offset_top = -144.0
-offset_right = 106.0
-offset_bottom = -8.0
-grow_horizontal = 2
+offset_left = 22.0
+offset_top = -112.0
+offset_right = 234.0
+offset_bottom = -11.0
 grow_vertical = 0
 
 [node name="NewGame" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
@@ -108,6 +130,7 @@ text = "New Game"
 expand_icon = true
 
 [node name="Continue" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Continue"
 expand_icon = true
@@ -123,8 +146,26 @@ layout_mode = 2
 text = "Quit"
 expand_icon = true
 
+[node name="RightParticleEmitter" type="GPUParticles2D" parent="."]
+position = Vector2(122, 121)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_l720e")
+texture = ExtResource("4_b1yed")
+lifetime = 5.0
+preprocess = 10.0
+speed_scale = 0.5
+
+[node name="LeftParticleEmitter" type="GPUParticles2D" parent="."]
+position = Vector2(-116, 100)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_l720e")
+texture = ExtResource("4_b1yed")
+lifetime = 5.0
+preprocess = 10.0
+speed_scale = 0.5
+
 [node name="PressSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_pn16t")
+stream = ExtResource("3_5dm4c")
 max_polyphony = 4
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
@@ -133,7 +174,8 @@ autoplay = true
 parameters/looping = true
 
 [node name="HoverSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_vji23")
+stream = ExtResource("5_5vmf5")
+volume_db = -20.775
 max_polyphony = 4
 
 [connection signal="confirmed" from="CanvasLayer/Control/QuitPopup" to="." method="_on_quit_popup_confirmed"]
