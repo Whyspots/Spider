@@ -42,6 +42,10 @@ movie_writer/movie_file="C:/Users/theha/Downloads/project_progress.avi"
 
 "Navigation Points"="Nodes that act as navigation points for enemies."
 
+[gui]
+
+theme/custom_font="res://fonts/jacksgate-demo/Jacksgate - Demo.otf"
+
 [input]
 
 up={

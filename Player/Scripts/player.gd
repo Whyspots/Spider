@@ -94,7 +94,7 @@ func UpdateAnimation( state : String ) -> void:
 
 func death_screen():
 	if dead == true:
-		get_tree().change_scene_to_file("res://gameover.tscn")
+		LevelManager.load_new_level("res://gameover.tscn", Vector2.ZERO)
 	
 
 
