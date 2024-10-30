@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dodi263wr6h7t"]
+[gd_scene load_steps=7 format=3 uid="uid://dodi263wr6h7t"]
 
 [ext_resource type="Script" path="res://Levels/Scripts/level.gd" id="1_sinoy"]
 [ext_resource type="PackedScene" uid="uid://qriwe38yj2op" path="res://Tile Maps/ground_01.tscn" id="2_vlxui"]
 [ext_resource type="PackedScene" uid="uid://bhyp0o2w0tp4q" path="res://Levels/player_spawn.tscn" id="3_n100n"]
 [ext_resource type="PackedScene" uid="uid://on6degdt1i4o" path="res://Enemies/Scientist/Scientist.tscn" id="4_keyd6"]
+[ext_resource type="PackedScene" uid="uid://b7iblkw22xt4l" path="res://props/Trash/Trash.tscn" id="5_4f0wt"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mxp7v"]
 vertices = PackedVector2Array(-223.898, 1769.37, -75, 11.8672, -75, 1675, 1964.88, 1883.65, 1825, 1675, 1956.11, -91.0313, 1825, -75, -66.0313, -93.9609, -67.6406, -75, 625, 275, 625, 175, 825, 175, 825, 775, 1425, 525, 925, 525, 925, 175, 1725, 175, 1725, 525, 1625, 525, 1425, 775, 1625, 775, 1725, 775, 1725, 825, 825, 825, 925, 1375, 925, 1125, 1725, 1125, 1725, 1575, 925, 1575, 925, 1425, 825, 1375, 825, 1425, 825, 1575, 25, 1575, 25, 775, 625, 775, 625, 375, 525, 275, 525, 375, 525, 525, 25, 525, 25, 175, 525, 175, 725, 75, 675, 75, 675, 25, 725, 25, 975, 75, 925, 75, 925, 25, 975, 25, 1125, 75, 1075, 75, 1075, 25, 1125, 25, 1275, 75, 1225, 75, 1225, 25, 1275, 25, 1425, 75, 1375, 75, 1375, 25, 1425, 25)
@@ -12,15 +13,17 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-89, -119, 1981, -116, 
 agent_radius = 25.0
 
 [node name="Level_00" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_sinoy")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(435, 213)
 navigation_polygon = SubResource("NavigationPolygon_mxp7v")
 
 [node name="Ground01" parent="NavigationRegion2D" instance=ExtResource("2_vlxui")]
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("3_n100n")]
-position = Vector2(1013, 434)
+position = Vector2(805, 515)
 
 [node name="Office" type="Marker2D" parent="." groups=["Navigation Points"]]
 position = Vector2(1281, 366)
@@ -35,5 +38,8 @@ position = Vector2(1315, 1357)
 position = Vector2(277, 326)
 
 [node name="Scientist" parent="." instance=ExtResource("4_keyd6")]
-position = Vector2(955, 363)
+position = Vector2(953, 364)
 navigation_rooms = Array[String](["Office", "BreakRoom", "Lab"])
+
+[node name="Trash" parent="." instance=ExtResource("5_4f0wt")]
+position = Vector2(856, 619)

@@ -14,6 +14,7 @@ const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN,Vector2.LEFT,Vector2.UP ]
 @onready var state_machine: PlayerStateMachine = $StateMachine
 @onready var dead = false
 
+signal DirectionChanged( new_direction: Vector2 )
 
 
 #Overall Variables (This is used both for movement and animation.
@@ -71,6 +72,7 @@ func SetDirection() -> bool:
 		return false
 		
 	cardinal_direction = new_dir
+	DirectionChanged.emit( new_dir )
 	
 	#Flips the scale depending on whether player is facing left or right.
 	#(Because we have symmetrical character and did NOT make a separate left and right animation)
