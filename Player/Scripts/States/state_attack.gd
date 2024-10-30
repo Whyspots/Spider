@@ -9,6 +9,10 @@ var attacking : bool = false
 @onready var walk: State = $"../Walk"
 @onready var idle: State = $"../Idle"
 
+@onready var hurt_box: HurtBox = $"../../Interactions/HurtBox"
+
+
+
 #ctrl drag the AnimationPlayer in for player attack animation
 @onready var animation_player : AnimationPlayer = $"../../AnimationPlayer"
 
@@ -41,6 +45,9 @@ func Enter() -> void:
 	
 	#Set attacking to true 
 	attacking = true
+	
+	await get_tree().create_timer( 0.075 ).timeout
+	hurt_box.monitoring = true
 	pass
 	
 
@@ -49,6 +56,7 @@ func Exit() -> void:
 	#Disconnect the signal when we are not in attack state. set attack state to false upon exit.
 	animation_player.animation_finished.disconnect( EndAttack )
 	attacking = false
+	hurt_box.monitoring = false
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

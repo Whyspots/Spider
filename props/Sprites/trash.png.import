@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5jq5s3cyqqwj"
-path="res://.godot/imported/trashfallen.png-a5f61a4ece4f614b2d4e776059b089c6.ctex"
+uid="uid://c8nv1wacm2noq"
+path="res://.godot/imported/trash.png-00f8e3ad9330aa85ba8c0a8b4af514e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://trashfallen.png"
-dest_files=["res://.godot/imported/trashfallen.png-a5f61a4ece4f614b2d4e776059b089c6.ctex"]
+source_file="res://props/Sprites/trash.png"
+dest_files=["res://.godot/imported/trash.png-00f8e3ad9330aa85ba8c0a8b4af514e3.ctex"]
 
 [params]
 
