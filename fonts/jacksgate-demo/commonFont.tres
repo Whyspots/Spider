@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://nok0wxmwlu84"]
+
+[ext_resource type="FontFile" uid="uid://dcvcnw7aem4vk" path="res://fonts/jacksgate-demo/Jacksgate - Demo.otf" id="1_k3rj0"]
+
+[resource]
+base_font = ExtResource("1_k3rj0")

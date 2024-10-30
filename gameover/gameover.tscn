@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://yad1bqa724pn"]
+[gd_scene load_steps=3 format=3 uid="uid://yad1bqa724pn"]
 
 [ext_resource type="Script" path="res://gameover/gameover.gd" id="1_p5s3g"]
+[ext_resource type="FontFile" uid="uid://dcvcnw7aem4vk" path="res://fonts/jacksgate-demo/Jacksgate - Demo.otf" id="2_1u5gg"]
 
 [node name="gameover" type="CanvasLayer"]
 script = ExtResource("1_p5s3g")
@@ -14,26 +15,30 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0.392157)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 205.0
-offset_top = 115.0
-offset_right = 277.0
+offset_left = 208.0
+offset_top = 114.0
+offset_right = 280.0
 offset_bottom = 138.0
+theme_override_fonts/font = ExtResource("2_1u5gg")
 text = "You died."
+horizontal_alignment = 1
 
 [node name="restart" type="Button" parent="."]
 anchors_preset = -1
 anchor_bottom = 0.03
-offset_left = 161.0
-offset_top = 165.0
-offset_right = 226.0
-offset_bottom = 187.9
+offset_left = 166.0
+offset_top = 161.0
+offset_right = 231.0
+offset_bottom = 183.9
+theme_override_fonts/font = ExtResource("2_1u5gg")
 text = "Restart"
 
 [node name="quit" type="Button" parent="."]
-offset_left = 266.0
-offset_top = 165.0
-offset_right = 308.0
-offset_bottom = 196.0
+offset_left = 265.0
+offset_top = 161.0
+offset_right = 307.0
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("2_1u5gg")
 text = "Quit
 "
 
