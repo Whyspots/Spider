@@ -13,6 +13,10 @@ const START_LEVEL : String = "res://Levels/Level_00/level_00.tscn"
 @onready var music_player: AudioStreamPlayer = $MusicPlayer
 @onready var hover_sound: AudioStreamPlayer = $HoverSound
 
+# Audios
+const SFX_MENU_START = preload("res://title_scene/Audio/sfx_menu_start.mp3")
+const SFX_MENU_SELECT = preload("res://title_scene/Audio/sfx_menu_select.mp3")
+
 # Confirmation dialog for quitting
 @onready var quit_popup: ConfirmationDialog = $CanvasLayer/Control/QuitPopup
 
@@ -56,6 +60,7 @@ func setup_title_screen() -> void:
 	pass
 
 func _on_new_game_pressed() -> void:
+	press_sound.stream = SFX_MENU_START
 	press_sound.play()
 	# Change scene to the start level
 	LevelManager.load_new_level(START_LEVEL, Vector2.ZERO)
@@ -66,15 +71,18 @@ func _on_new_game_pressed() -> void:
 
 
 func _on_continue_pressed() -> void:
+	press_sound.stream = SFX_MENU_START
 	press_sound.play()
 	pass # Replace with function body.
 
 
 func _on_settings_pressed() -> void:
+	press_sound.stream = SFX_MENU_SELECT
 	press_sound.play()
 	pass # Replace with function body.
 
 func _on_quit_pressed() -> void:
+	press_sound.stream = SFX_MENU_SELECT
 	press_sound.play()
 	
 	# Confirm with user whether or not they want to quit
