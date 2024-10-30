@@ -12,7 +12,7 @@ const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN,Vector2.LEFT,Vector2.UP ]
 	#Same thing for our sprite:
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var state_machine: PlayerStateMachine = $StateMachine
-
+@onready var dead = false
 
 
 
@@ -92,7 +92,10 @@ func UpdateAnimation( state : String ) -> void:
 	animation_player.play( state + "_" + AnimDirection())
 	pass
 
-
+func death_screen():
+	if dead == true:
+		get_tree().change_scene_to_file("res://gameover.tscn")
+	
 
 
 
