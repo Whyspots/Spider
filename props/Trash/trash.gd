@@ -1,16 +1,20 @@
 class_name Trash extends Node2D
 
+signal finished
+
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var sprite_2d_toppled: Sprite2D = $Sprite2D_toppled
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var hit_box: HitBox = $HitBox
+
 
 func _ready():
-	$HitBox.Damaged.connect( TakeDamage )
-	sprite_2d_toppled.visible = false
+	hit_box.Damaged.connect( TakeDamage )
 	pass
 	
 func TakeDamage( _damage : int ) -> void:
+	hit_box.queue_free()
 	topple()
+		
 	pass
 	
 func topple() -> void:
@@ -18,6 +22,4 @@ func topple() -> void:
 	animation_player.animation_finished.connect(_on_animation_finished)
 	
 func _on_animation_finished(name: String) -> void:
-	if name == "toppling":
-		sprite_2d.visible = false
-		sprite_2d_toppled.visible = true
+	finished.emit()

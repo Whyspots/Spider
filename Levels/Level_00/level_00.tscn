@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dodi263wr6h7t"]
+[gd_scene load_steps=12 format=3 uid="uid://dodi263wr6h7t"]
 
 [ext_resource type="Script" path="res://Levels/Scripts/level.gd" id="1_sinoy"]
 [ext_resource type="PackedScene" uid="uid://qriwe38yj2op" path="res://Tile Maps/ground_01.tscn" id="2_vlxui"]
@@ -15,6 +15,10 @@ vertices = PackedVector2Array(636, 275, 636, 175, 836, 175, 836, 775, 1436, 525,
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(7, 8, 9), PackedInt32Array(4, 7, 9, 10), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(10, 11, 14), PackedInt32Array(3, 10, 14), PackedInt32Array(15, 16, 17, 18), PackedInt32Array(18, 19, 20), PackedInt32Array(15, 18, 20, 21), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 23, 24, 25, 26), PackedInt32Array(21, 22, 26), PackedInt32Array(14, 21, 26), PackedInt32Array(3, 14, 26, 27), PackedInt32Array(0, 3, 27), PackedInt32Array(28, 0, 27, 29), PackedInt32Array(29, 30, 31, 32), PackedInt32Array(28, 29, 32), PackedInt32Array(33, 28, 32), PackedInt32Array(34, 35, 36, 37), PackedInt32Array(38, 39, 40, 41), PackedInt32Array(42, 43, 44, 45), PackedInt32Array(46, 47, 48, 49), PackedInt32Array(50, 51, 52, 53), PackedInt32Array(54, 55, 56, 57), PackedInt32Array(58, 54, 57, 59), PackedInt32Array(60, 58, 59, 61), PackedInt32Array(55, 60, 61, 56)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-136, -178, 1923, -166, 1940, 1808, -243, 1796)])
 agent_radius = 25.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_v5alb"]
+closed = false
+polygon = PackedVector2Array(848.465, 1591.47, 848.465, 1451.47, 895.465, 1450.47, 899.465, 1593.47, 1740.46, 1599.47, 1745.46, 1599.47, 1754.46, 897.475, 894.465, 896.475, 888.465, 1143.47, 852.465, 1148.47, 855.465, 863.475, 1742.46, 860.475, 1747.46, 593.475, 1651.46, 593.475, 1648.46, 556.475, 1745.46, 554.475, 1747.46, -16.525, 887.465, -17.525, 887.465, 555.475, 1388.46, 553.475, 1386.46, 590.475, 849.465, 592.475, 843.465, -18.525, -13.535, -11.525, -13.535, 556.475, 553.465, 555.475, 549.465, 406.475, 585.465, 406.475, 586.465, 590.475, -17.535, 599.475, -11.535, 1604.47, 848.465, 1607.47)
 
 [node name="Level00" type="Node2D"]
 script = ExtResource("1_sinoy")
@@ -66,3 +70,7 @@ position = Vector2(363, 420)
 
 [node name="Trash3" parent="." instance=ExtResource("9_677sg")]
 position = Vector2(1036, 493)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(5.535, 0.525)
+occluder = SubResource("OccluderPolygon2D_v5alb")
