@@ -73,20 +73,20 @@ _data = {
 script = ExtResource("1_l2mn6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(8.04147, 3.02699)
+position = Vector2(-1.44369, -1.33555)
 scale = Vector2(0.215, 0.212152)
 texture = ExtResource("1_7qj55")
 offset = Vector2(-32.5581, -70.704)
 
 [node name="HitBox" parent="." instance=ExtResource("2_nymcu")]
-position = Vector2(1.04147, -11.973)
+position = Vector2(-8.44369, -16.3355)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(-1, 12)
 shape = SubResource("RectangleShape2D_bil22")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(1.04147, -11.973)
+position = Vector2(-8.44369, -16.3355)
 collision_layer = 17
 collision_mask = 0
 
