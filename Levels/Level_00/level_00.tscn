@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dodi263wr6h7t"]
+[gd_scene load_steps=10 format=3 uid="uid://dodi263wr6h7t"]
 
 [ext_resource type="Script" path="res://Levels/Scripts/level.gd" id="1_sinoy"]
 [ext_resource type="PackedScene" uid="uid://qriwe38yj2op" path="res://Tile Maps/ground_01.tscn" id="2_vlxui"]
@@ -7,11 +7,23 @@
 [ext_resource type="PackedScene" uid="uid://kalp4ci8tb7" path="res://Objects/table_hideable.tscn" id="5_py7cn"]
 [ext_resource type="PackedScene" uid="uid://cehj78wmlhwlo" path="res://Objects/couch_hideable.tscn" id="6_kx1f0"]
 [ext_resource type="PackedScene" uid="uid://dc4hhdtyd08fy" path="res://Objects/vial.tscn" id="7_vd1nq"]
+[ext_resource type="PackedScene" uid="uid://on6degdt1i4o" path="res://Enemies/Scientist/Scientist.tscn" id="8_sm2o3"]
 
-[node name="Playground" type="Node2D"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fwdnj"]
+vertices = PackedVector2Array(636, 275, 636, 175, 836, 175, 836, 775, 1436, 525, 936, 525, 936, 175, 1736, 175, 1736, 525, 1636, 525, 1436, 775, 1636, 775, 1736, 775, 1736, 825, 836, 825, 936, 1375, 936, 1125, 1736, 1125, 1736, 1575, 936, 1575, 936, 1425, 836, 1375, 836, 1425, 836, 1575, 36, 1575, 36, 775, 636, 775, 636, 375, 536, 275, 536, 375, 536, 525, 36, 525, 36, 175, 536, 175, 736, 75, 686, 75, 686, 25, 736, 25, 986, 75, 936, 75, 936, 25, 986, 25, 1136, 75, 1086, 75, 1086, 25, 1136, 25, 1286, 75, 1236, 75, 1236, 25, 1286, 25, 1436, 75, 1386, 75, 1386, 25, 1436, 25, 1898.21, -141.141, 1914.78, 1782.86, 1836, 1675, 1836, -75, -112.32, -152.859, -64, -75, -216.609, 1771.14, -64, 1675)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(7, 8, 9), PackedInt32Array(4, 7, 9, 10), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(10, 11, 14), PackedInt32Array(3, 10, 14), PackedInt32Array(15, 16, 17, 18), PackedInt32Array(18, 19, 20), PackedInt32Array(15, 18, 20, 21), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 23, 24, 25, 26), PackedInt32Array(21, 22, 26), PackedInt32Array(14, 21, 26), PackedInt32Array(3, 14, 26, 27), PackedInt32Array(0, 3, 27), PackedInt32Array(28, 0, 27, 29), PackedInt32Array(29, 30, 31, 32), PackedInt32Array(28, 29, 32), PackedInt32Array(33, 28, 32), PackedInt32Array(34, 35, 36, 37), PackedInt32Array(38, 39, 40, 41), PackedInt32Array(42, 43, 44, 45), PackedInt32Array(46, 47, 48, 49), PackedInt32Array(50, 51, 52, 53), PackedInt32Array(54, 55, 56, 57), PackedInt32Array(58, 54, 57, 59), PackedInt32Array(60, 58, 59, 61), PackedInt32Array(55, 60, 61, 56)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-136, -178, 1923, -166, 1940, 1808, -243, 1796)])
+agent_radius = 25.0
+
+[node name="Level00" type="Node2D"]
 script = ExtResource("1_sinoy")
 
-[node name="Ground01" parent="." instance=ExtResource("2_vlxui")]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-11, 0)
+navigation_polygon = SubResource("NavigationPolygon_fwdnj")
+
+[node name="Ground01" parent="NavigationRegion2D" instance=ExtResource("2_vlxui")]
+position = Vector2(11, 0)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("3_n100n")]
 position = Vector2(1383, 1389)
@@ -31,3 +43,16 @@ position = Vector2(359, 922)
 z_index = 0
 position = Vector2(1653, 1043)
 scale = Vector2(0.494667, 0.494667)
+
+[node name="Scientist" parent="." instance=ExtResource("8_sm2o3")]
+position = Vector2(1152, 354)
+navigation_rooms = Array[String](["Office", "BreakRoom", "Lab"])
+
+[node name="Office" type="Marker2D" parent="." groups=["Navigation Points"]]
+position = Vector2(1267, 346)
+
+[node name="BreakRoom" type="Marker2D" parent="." groups=["Navigation Points"]]
+position = Vector2(348, 1169)
+
+[node name="Lab" type="Marker2D" parent="." groups=["Navigation Points"]]
+position = Vector2(1290, 1365)
