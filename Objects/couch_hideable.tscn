@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://cehj78wmlhwlo"]
+
+[ext_resource type="Script" path="res://Objects/Scripts/hideable_objects.gd" id="1_q00p2"]
+[ext_resource type="Texture2D" uid="uid://wv5ght0tgfgf" path="res://Objects/Images/couch.png" id="2_q3ke2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2gil"]
+size = Vector2(316.25, 141.5)
+
+[sub_resource type="Animation" id="Animation_1fvqw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kucw0"]
+resource_name = "fade_in"
+length = 0.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.470588, 0.470588, 0.470588, 0.784314), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ihmmy"]
+resource_name = "fade_out"
+length = 0.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.470588, 0.470588, 0.470588, 0.784314)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_agp0y"]
+_data = {
+"RESET": SubResource("Animation_1fvqw"),
+"fade_in": SubResource("Animation_kucw0"),
+"fade_out": SubResource("Animation_ihmmy")
+}
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(110, 140)
+collision_layer = 2
+script = ExtResource("1_q00p2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-103, -111)
+scale = Vector2(0.4205, 0.439206)
+texture = ExtResource("2_q3ke2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-103, -68)
+shape = SubResource("RectangleShape2D_b2gil")
+
+[node name="objectdarken" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_agp0y")
+}
