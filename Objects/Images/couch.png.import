@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7sb8quhorna0"
-path="res://.godot/imported/skeletonmodelbase.png-1bbb656633d52bb1ae4e846bce43b4b0.ctex"
+uid="uid://wv5ght0tgfgf"
+path="res://.godot/imported/couch.png-d1ed8c1f09e00661b63da7ef2c95fb1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://skeletonmodelbase.png"
-dest_files=["res://.godot/imported/skeletonmodelbase.png-1bbb656633d52bb1ae4e846bce43b4b0.ctex"]
+source_file="res://Objects/Images/couch.png"
+dest_files=["res://.godot/imported/couch.png-d1ed8c1f09e00661b63da7ef2c95fb1a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7sb8quhorna0"
-path="res://.godot/imported/skeletonmodelbase.png-1bbb656633d52bb1ae4e846bce43b4b0.ctex"
+uid="uid://c507134mwitlr"
+path="res://.godot/imported/skeletonmodelbase.png-f96c45a008b7b80ff20bdaa9578617b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://skeletonmodelbase.png"
-dest_files=["res://.godot/imported/skeletonmodelbase.png-1bbb656633d52bb1ae4e846bce43b4b0.ctex"]
+source_file="res://Objects/Images/skeletonmodelbase.png"
+dest_files=["res://.godot/imported/skeletonmodelbase.png-f96c45a008b7b80ff20bdaa9578617b9.ctex"]
 
 [params]
 

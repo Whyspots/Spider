@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7sb8quhorna0"
-path="res://.godot/imported/skeletonmodelbase.png-1bbb656633d52bb1ae4e846bce43b4b0.ctex"
+uid="uid://c5jq5s3cyqqwj"
+path="res://.godot/imported/trashfallen.png-3550ac96e3541b6c3478600def853403.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://skeletonmodelbase.png"
-dest_files=["res://.godot/imported/skeletonmodelbase.png-1bbb656633d52bb1ae4e846bce43b4b0.ctex"]
+source_file="res://Objects/Images/trashfallen.png"
+dest_files=["res://.godot/imported/trashfallen.png-3550ac96e3541b6c3478600def853403.ctex"]
 
 [params]
 
