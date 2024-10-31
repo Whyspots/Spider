@@ -4,13 +4,17 @@ signal finished
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var hit_box: HitBox = $HitBox
 
 func _ready():
-	$HitBox.Damaged.connect( TakeDamage )
+	hit_box.Damaged.connect( TakeDamage )
 	pass
 	
 func TakeDamage( _damage : int ) -> void:
-	topple()
+	if (hit_box.monitorable):
+		topple()
+		
+	hit_box.monitorable = false
 	pass
 	
 func topple() -> void:

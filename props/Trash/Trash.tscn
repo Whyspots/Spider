@@ -13,26 +13,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"update": 1,
+"values": [ExtResource("1_7qj55")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_7qj55")]
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_3iduj"]
@@ -41,26 +41,26 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.5, 1),
-"transitions": PackedFloat32Array(0.707107, 1.6245, 1, 0.129408),
-"update": 0,
-"values": [0.0, 0.429351, 1.18159, 1.43117]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:texture")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [ExtResource("1_7qj55"), ExtResource("4_b706k")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 1),
+"transitions": PackedFloat32Array(0.707107, 1.6245, 1, 0.129408),
+"update": 0,
+"values": [0.0, 0.429351, 1.18159, 1.43117]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kng5g"]
@@ -73,18 +73,20 @@ _data = {
 script = ExtResource("1_l2mn6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(7, 15)
+position = Vector2(-1.44369, -1.33555)
 scale = Vector2(0.215, 0.212152)
 texture = ExtResource("1_7qj55")
 offset = Vector2(-32.5581, -70.704)
 
 [node name="HitBox" parent="." instance=ExtResource("2_nymcu")]
+position = Vector2(-8.44369, -16.3355)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(-1, 12)
 shape = SubResource("RectangleShape2D_bil22")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-8.44369, -16.3355)
 collision_layer = 17
 collision_mask = 0
 
