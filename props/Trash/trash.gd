@@ -6,15 +6,15 @@ signal finished
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hit_box: HitBox = $HitBox
 
+
 func _ready():
 	hit_box.Damaged.connect( TakeDamage )
 	pass
 	
 func TakeDamage( _damage : int ) -> void:
-	if (hit_box.monitorable):
-		topple()
+	hit_box.queue_free()
+	topple()
 		
-	hit_box.monitorable = false
 	pass
 	
 func topple() -> void:
