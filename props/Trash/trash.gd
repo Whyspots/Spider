@@ -6,7 +6,7 @@ signal finished
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hit_box: HitBox = $HitBox
 @export var fear_radius = 2200
-@export var fear = 25
+@export var fear = 2000
 @onready var collision_box: StaticBody2D = $StaticBody2D
 
 

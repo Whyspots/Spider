@@ -7,6 +7,8 @@ class_name FearMeter extends ProgressBar
 @onready var _decay_delay_timer: Timer = $DecayDelayTimer
 
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
+@onready var _fear_meter_full: AudioStreamPlayer2D = $FearMeterFull
+var has_played_full_sound: bool = false
 
 
 '''
@@ -66,8 +68,13 @@ func init_fear_bar(
 func _update_fear(new_fear):
 	var prev_fear:float = fear
 	# Cap new fear to maximum
-	if (new_fear > max_value):
+	if (new_fear >= max_value):
 		new_fear = max_value
+		if not has_played_full_sound:
+			_fear_meter_full.play()
+			has_played_full_sound = true
+	else: 
+		has_played_full_sound = false
 	
 	if (new_fear > prev_fear + 0.001 or new_fear < prev_fear - 0.001 ):
 		_handle_decay_pause(new_fear, prev_fear)
