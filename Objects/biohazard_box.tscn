@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bo7pum3obi4yb"]
+[gd_scene load_steps=4 format=3 uid="uid://dlu4edbfkayrr"]
 
 [ext_resource type="Texture2D" uid="uid://bottvh2ms2ki4" path="res://Objects/Images/box.png" id="1_stfq7"]
+[ext_resource type="Script" path="res://Objects/Scripts/biohazard_box.gd" id="2_jpok5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ey7ac"]
 size = Vector2(408.333, 336.667)
@@ -10,6 +11,7 @@ z_index = 1
 position = Vector2(-9, -25)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_stfq7")
+script = ExtResource("2_jpok5")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1, 1)

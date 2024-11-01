@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgsht5fplhxxx"]
+[gd_scene load_steps=5 format=3 uid="uid://djotgbwb0bj7t"]
 
 [ext_resource type="Texture2D" uid="uid://be1bn6x0ax0lp" path="res://Objects/Images/computer_table.png" id="1_l6u42"]
 [ext_resource type="Texture2D" uid="uid://bur36ki3n2bb0" path="res://Player/Sprites/PlayerLightField.png" id="2_8arqb"]

@@ -25,7 +25,8 @@ func check_collision():
 	var collision_point
 	if ray_cast.is_colliding():
 		var collided_object = ray_cast.get_collider()
-		if collided_object is StaticBody2D:
+		var collision_parent = collided_object.get_parent()
+		if collided_object is StaticBody2D and collision_parent.has_method("get_pulled_to"):
 			collided_object.get_parent().get_pulled_to(self.get_parent().get_parent().position)
 		elif collided_object is TileMap:
 			collision_point = ray_cast.get_collision_point()
