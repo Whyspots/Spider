@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dodi263wr6h7t"]
+[gd_scene load_steps=18 format=3 uid="uid://dodi263wr6h7t"]
 
 [ext_resource type="Script" path="res://Levels/Scripts/level.gd" id="1_sinoy"]
 [ext_resource type="PackedScene" uid="uid://qriwe38yj2op" path="res://Tile Maps/ground_01.tscn" id="2_vlxui"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://coo6sbkl0fti3" path="res://Objects/drain.tscn" id="14_jlnr8"]
 [ext_resource type="Texture2D" uid="uid://bur36ki3n2bb0" path="res://Player/Sprites/PlayerLightField.png" id="15_2hhih"]
 [ext_resource type="PackedScene" uid="uid://bnkg2fismbpey" path="res://Objects/glass_pane.tscn" id="16_6iarn"]
+[ext_resource type="PackedScene" uid="uid://c7ymcdg70joja" path="res://Objects/vase.tscn" id="16_b1pve"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_fwdnj"]
 vertices = PackedVector2Array(636, 275, 636, 175, 836, 175, 836, 775, 1436, 525, 936, 525, 936, 175, 1736, 175, 1736, 525, 1636, 525, 1436, 775, 1636, 775, 1736, 775, 1736, 825, 836, 825, 936, 1375, 936, 1125, 1736, 1125, 1736, 1575, 936, 1575, 936, 1425, 836, 1375, 836, 1425, 836, 1575, 36, 1575, 36, 775, 636, 775, 636, 375, 536, 275, 536, 375, 536, 525, 36, 525, 36, 175, 536, 175, 736, 75, 686, 75, 686, 25, 736, 25, 986, 75, 936, 75, 936, 25, 986, 25, 1136, 75, 1086, 75, 1086, 25, 1136, 25, 1286, 75, 1236, 75, 1236, 25, 1286, 25, 1436, 75, 1386, 75, 1386, 25, 1436, 25, 1898.21, -141.141, 1914.78, 1782.86, 1836, 1675, 1836, -75, -112.32, -152.859, -64, -75, -216.609, 1771.14, -64, 1675)
@@ -143,3 +144,7 @@ texture = ExtResource("15_2hhih")
 [node name="Vial17" parent="." instance=ExtResource("16_6iarn")]
 position = Vector2(651, 290)
 scale = Vector2(0.2965, 0.2965)
+
+[node name="Vase2" parent="." instance=ExtResource("16_b1pve")]
+position = Vector2(795, 1480)
+scale = Vector2(0.3, 0.3)
