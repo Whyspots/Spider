@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://wv5ght0tgfgf" path="res://Objects/Images/couch.png" id="2_q3ke2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2gil"]
-size = Vector2(316.25, 141.5)
+size = Vector2(316.25, 250.25)
 
 [sub_resource type="Animation" id="Animation_1fvqw"]
 length = 0.001
@@ -64,6 +64,7 @@ _data = {
 
 [node name="Area2D" type="Area2D"]
 position = Vector2(110, 140)
+scale = Vector2(0.8, 0.8)
 collision_layer = 2
 script = ExtResource("1_q00p2")
 
@@ -73,7 +74,8 @@ scale = Vector2(0.4205, 0.439206)
 texture = ExtResource("2_q3ke2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-103, -68)
+position = Vector2(-103, -122.375)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_b2gil")
 
 [node name="objectdarken" type="AnimationPlayer" parent="."]

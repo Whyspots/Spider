@@ -1,20 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bel1wwkxq4t4n"]
+[gd_scene load_steps=3 format=3 uid="uid://dc4hhdtyd08fy"]
 
-[ext_resource type="Texture2D" uid="uid://df0k2pgat3ijm" path="res://Objects/Images/vial.png" id="1_rs7f7"]
+[ext_resource type="Texture2D" uid="uid://cx7767q6pslus" path="res://Objects/Images/vase.png" id="1_f7lc3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ivyed"]
-radius = 173.0
-height = 538.0
+radius = 47.0
+height = 120.0
 
-[node name="Vial" type="Sprite2D"]
+[node name="Vase" type="Sprite2D"]
 z_index = 1
 position = Vector2(-9, -25)
-texture = ExtResource("1_rs7f7")
+texture = ExtResource("1_f7lc3")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1, 1)
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(21, 53)
+position = Vector2(3, 229)
 shape = SubResource("CapsuleShape2D_ivyed")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgsht5fplhxxx"]
+
+[ext_resource type="Texture2D" uid="uid://be1bn6x0ax0lp" path="res://Objects/Images/computer_table.png" id="1_l6u42"]
+[ext_resource type="Texture2D" uid="uid://bur36ki3n2bb0" path="res://Player/Sprites/PlayerLightField.png" id="2_8arqb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ey7ac"]
+size = Vector2(316.667, 704.833)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g6sm7"]
+radius = 90.5538
+
+[node name="Vial" type="Sprite2D"]
+z_index = 1
+position = Vector2(-9, -25)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_l6u42")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1, 1)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-311, 9.91666)
+shape = SubResource("RectangleShape2D_ey7ac")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-37.6667, -74.3333)
+shape = SubResource("CircleShape2D_g6sm7")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-340, -213.333)
+scale = Vector2(1.61111, 2.36111)
+color = Color(0, 0.851448, 0.851649, 1)
+energy = 0.95
+texture = ExtResource("2_8arqb")
+texture_scale = 0.75
