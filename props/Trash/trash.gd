@@ -1,7 +1,7 @@
 class_name Trash extends Node2D
 
 signal finished
-
+@onready var fall_over_audio: AudioStreamPlayer2D = $FallOver
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hit_box: HitBox = $HitBox
@@ -29,6 +29,7 @@ func apply_fear_to_nearby_enemies():
 				enemy.get_scared(fear, collision_box.global_position)
 
 func topple() -> void:
+	fall_over_audio.play()
 	animation_player.play("toppling")
 	animation_player.animation_finished.connect(_on_animation_finished)
 	

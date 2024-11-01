@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cexwp3gqaxn3e"
+path="res://.godot/imported/sfx_scientist_footstep _carpet.mp3-4d65aafe6655efae88aaf777ba9acfcd.mp3str"
+
+[deps]
+
+source_file="res://SFX/sfx_scientist_footstep _carpet.mp3"
+dest_files=["res://.godot/imported/sfx_scientist_footstep _carpet.mp3-4d65aafe6655efae88aaf777ba9acfcd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

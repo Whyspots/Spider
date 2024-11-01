@@ -1,5 +1,7 @@
 class_name Level extends Node2D
 
+@onready var music_player: AudioStreamPlayer = $MusicPlayer
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.y_sort_enabled = true
