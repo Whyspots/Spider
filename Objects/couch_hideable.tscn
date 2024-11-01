@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cehj78wmlhwlo"]
 
-[ext_resource type="Script" path="res://Objects/Scripts/hideable_objects.gd" id="1_q00p2"]
+[ext_resource type="Script" path="res://Objects/Scripts/Abstractions/hideable_objects.gd" id="1_q00p2"]
 [ext_resource type="Texture2D" uid="uid://wv5ght0tgfgf" path="res://Objects/Images/couch.png" id="2_q3ke2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2gil"]
@@ -75,7 +75,6 @@ texture = ExtResource("2_q3ke2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-103, -122.375)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_b2gil")
 
 [node name="objectdarken" type="AnimationPlayer" parent="."]

@@ -102,8 +102,10 @@ func death_screen():
 
 
 
-
-
-
 #When done, drag the script file from the bottom left file navigator onto the "Player" 
 #Item on the top right.
+
+func _on_web_chain_hooked(hooked_position):
+	await get_tree().create_timer(0.2).timeout
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position", hooked_position,0.75)

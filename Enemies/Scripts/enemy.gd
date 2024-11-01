@@ -88,3 +88,6 @@ func anim_direction() -> String:
 func navigate_to_room(room : String) -> void:
 	var destination : Vector2 = navigation_points[room]
 	navigation_agent.set_target_position(destination)
+	
+func get_scared(fear_increase) -> void:
+	self.fear_meter.fear += fear_increase

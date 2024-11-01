@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://kalp4ci8tb7"]
 
-[ext_resource type="Script" path="res://Objects/Scripts/hideable_objects.gd" id="1_ix8us"]
+[ext_resource type="Script" path="res://Objects/Scripts/Abstractions/hideable_objects.gd" id="1_ix8us"]
 [ext_resource type="Texture2D" uid="uid://h2efprr2blfx" path="res://Objects/Images/table.png" id="1_jvlsh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2gil"]
