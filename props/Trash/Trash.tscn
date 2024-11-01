@@ -119,6 +119,7 @@ _data = {
 
 [node name="Trash" type="Node2D"]
 script = ExtResource("1_l2mn6")
+fear_radius = 2200
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.44369, -1.33555)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://on6degdt1i4o"]
+[gd_scene load_steps=21 format=3 uid="uid://on6degdt1i4o"]
 
 [ext_resource type="Script" path="res://Enemies/Scripts/enemy.gd" id="1_01bls"]
 [ext_resource type="Texture2D" uid="uid://1fgw3r56s0iy" path="res://Player/Sprites/Shadow.png" id="1_iw5pk"]
 [ext_resource type="Texture2D" uid="uid://lxa8tuh1ovig" path="res://Enemies/Scientist/sciframes_0000-0.png" id="3_kjqte"]
 [ext_resource type="PackedScene" uid="uid://ciinxo8ungh40" path="res://Enemies/FearMeter/fear_meter.tscn" id="4_j46bs"]
+[ext_resource type="Texture2D" uid="uid://dmit0nmthj5nx" path="res://Enemies/General Sprites/question_mark.png" id="5_offjt"]
 [ext_resource type="Script" path="res://Enemies/Scripts/enemy_state_machine.gd" id="5_yn7mp"]
 [ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_idle.gd" id="6_vlgxa"]
 [ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_wander.gd" id="7_44ejo"]
@@ -236,6 +237,12 @@ offset_right = 144.0
 offset_bottom = 412.0
 metadata/_edit_use_anchors_ = true
 
+[node name="QuestionMark" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-20.0001, -374.286)
+scale = Vector2(0.228571, 0.228571)
+texture = ExtResource("5_offjt")
+
 [node name="EnemyStateMachine" type="Node" parent="."]
 script = ExtResource("5_yn7mp")
 
@@ -263,4 +270,5 @@ script = ExtResource("9_35h6i")
 next_state = NodePath("../Search")
 
 [connection signal="navigation_finished" from="CollisionShape2D/NavigationAgent" to="EnemyStateMachine/Navigate" method="_on_navigation_agent_navigation_finished"]
+[connection signal="navigation_finished" from="CollisionShape2D/NavigationAgent" to="EnemyStateMachine/Investigate" method="_on_navigation_agent_navigation_finished"]
 [connection signal="target_reached" from="CollisionShape2D/NavigationAgent" to="EnemyStateMachine/Navigate" method="_on_navigation_agent_target_reached"]
