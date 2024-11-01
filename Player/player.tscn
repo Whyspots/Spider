@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dpbxurc1g2pbd"]
+[gd_scene load_steps=35 format=3 uid="uid://bwlfico6q2s0g"]
 
 [ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_mqew6"]
 [ext_resource type="Texture2D" uid="uid://c6wjeq3i76vo6" path="res://Player/Sprites/PlayerSprite02.png" id="2_5khwv"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bur36ki3n2bb0" path="res://Player/Sprites/PlayerLightField.png" id="11_d767x"]
 [ext_resource type="Script" path="res://Player/Scripts/PlayerInteractionsHost.gd" id="12_a3nin"]
 [ext_resource type="PackedScene" uid="uid://c27soopnjujjf" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="12_iube2"]
+[ext_resource type="PackedScene" uid="uid://difja7of4bkvm" path="res://Chain/web.tscn" id="14_7dp2r"]
+[ext_resource type="Script" path="res://Player/Scripts/web_pivot.gd" id="14_qknq8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5m17y"]
 
@@ -504,3 +506,11 @@ monitoring = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HurtBox"]
 shape = SubResource("CircleShape2D_arqlb")
 debug_color = Color(0.317358, 0.50734, 0, 0.42)
+
+[node name="Web_Pivot" type="Node2D" parent="."]
+script = ExtResource("14_qknq8")
+
+[node name="Web_Chain" parent="Web_Pivot" instance=ExtResource("14_7dp2r")]
+rotation = -1.5708
+
+[connection signal="hooked" from="Web_Pivot/Web_Chain" to="." method="_on_web_chain_hooked"]

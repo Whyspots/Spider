@@ -21,3 +21,9 @@ func _on_animation_finished(name: String) -> void:
 	if name == "toppling":
 		sprite_2d.visible = false
 		sprite_2d_toppled.visible = true
+		
+func get_pulled_to(target_position):
+		await get_tree().create_timer(0.2).timeout
+		var tween = get_tree().create_tween()
+		print(target_position)
+		tween.tween_property(self, "position", target_position, 0.75)
