@@ -5,9 +5,6 @@ class_name EnemyStateNavigate extends EnemyState
 @export var navigate_speed : float = 20.0
 
 @export_category("AI")
-#@export var state_animation_duration : float = 0.7
-#@export var state_cycle_min : int = 1
-#@export var state_cycle_max : int = 3
 @export var next_state : EnemyState
 
 var _timer : float = 0.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://on6degdt1i4o"]
+[gd_scene load_steps=20 format=3 uid="uid://on6degdt1i4o"]
 
 [ext_resource type="Script" path="res://Enemies/Scripts/enemy.gd" id="1_01bls"]
 [ext_resource type="Texture2D" uid="uid://1fgw3r56s0iy" path="res://Player/Sprites/Shadow.png" id="1_iw5pk"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_idle.gd" id="6_vlgxa"]
 [ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_wander.gd" id="7_44ejo"]
 [ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_navigate.gd" id="8_lgyf4"]
+[ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_search.gd" id="8_ufcpk"]
+[ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_investigate.gd" id="9_35h6i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dgrff"]
 radius = 64.0
@@ -247,10 +249,17 @@ script = ExtResource("7_44ejo")
 wander_speed = 30.0
 next_state = NodePath("../Idle")
 
+[node name="Search" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("8_ufcpk")
+
 [node name="Navigate" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("8_lgyf4")
 navigate_speed = 100.0
 next_state = NodePath("../Idle")
+
+[node name="Investigate" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("9_35h6i")
+next_state = NodePath("../Navigate")
 
 [connection signal="navigation_finished" from="CollisionShape2D/NavigationAgent" to="EnemyStateMachine/Navigate" method="_on_navigation_agent_navigation_finished"]
 [connection signal="target_reached" from="CollisionShape2D/NavigationAgent" to="EnemyStateMachine/Navigate" method="_on_navigation_agent_target_reached"]
