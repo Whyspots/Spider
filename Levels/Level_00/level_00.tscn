@@ -66,6 +66,7 @@ position = Vector2(348, 1169)
 [node name="Lab" type="Marker2D" parent="." groups=["Navigation Points"]]
 position = Vector2(1290, 1365)
 
+
 [node name="Vial2" parent="." instance=ExtResource("9_usw7q")]
 z_index = -1
 position = Vector2(499, 727)
@@ -149,6 +150,7 @@ scale = Vector2(0.2965, 0.2965)
 [node name="Vase2" parent="." instance=ExtResource("16_b1pve")]
 position = Vector2(795, 1480)
 scale = Vector2(0.3, 0.3)
+
 
 [node name="Trash" parent="." instance=ExtResource("9_677sg")]
 position = Vector2(84, 1589)

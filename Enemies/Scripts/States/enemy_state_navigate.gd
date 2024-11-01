@@ -7,8 +7,6 @@ class_name EnemyStateNavigate extends EnemyState
 @export_category("AI")
 @export var next_state : EnemyState
 
-var _timer : float = 0.0
-var _direction : Vector2
 var _finished = false
 var _room_index = 0
 var _room_iteration_constant = 1
