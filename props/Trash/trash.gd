@@ -5,7 +5,7 @@ signal finished
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hit_box: HitBox = $HitBox
-@export var fear_radius = 250
+@export var fear_radius = 2200
 @export var fear = 25
 
 

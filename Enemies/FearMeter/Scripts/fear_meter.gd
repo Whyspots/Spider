@@ -111,7 +111,6 @@ func _handle_decay_pause(new_fear : float, prev_fear : float) -> void:
 			_decay_delay_timer.stop()
 			_decay_delay_timer.start(time_to_pause + current)
 			current_decay_rate = 0
-			
 
 ## Play a fade out animation on the [FearMeter] and make it invisible
 func fade_out():

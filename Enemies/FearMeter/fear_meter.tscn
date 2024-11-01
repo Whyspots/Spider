@@ -96,18 +96,18 @@ _data = {
 }
 
 [node name="FearMeter" type="ProgressBar"]
-z_index = 2
+z_index = 3
 y_sort_enabled = true
 offset_right = 48.0
 offset_bottom = 6.0
 theme_override_styles/background = SubResource("StyleBoxEmpty_m5n5e")
 theme_override_styles/fill = SubResource("StyleBoxFlat_4c620")
-value = 50.0
+value = 70.0
 show_percentage = false
 script = ExtResource("1_fu6j0")
 
 [node name="DamageBar" type="ProgressBar" parent="."]
-z_index = 1
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -116,7 +116,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_dbstn")
 theme_override_styles/fill = SubResource("StyleBoxFlat_3cr3x")
-value = 80.0
+value = 75.0
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="."]
@@ -133,6 +133,7 @@ one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 show_behind_parent = true
+z_index = -2
 position = Vector2(145, 32)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_thd7w")
