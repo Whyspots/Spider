@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dc4hhdtyd08fy"]
 
-[ext_resource type="Texture2D" uid="uid://df0k2pgat3ijm" path="res://Objects/Images/vial.png" id="1_jidka"]
+[ext_resource type="Texture2D" uid="uid://df0k2pgat3ijm" path="res://Objects/Images/vial.png" id="1_rs7f7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ivyed"]
 radius = 173.0
@@ -9,7 +9,7 @@ height = 538.0
 [node name="Vial" type="Sprite2D"]
 z_index = 1
 position = Vector2(-9, -25)
-texture = ExtResource("1_jidka")
+texture = ExtResource("1_rs7f7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1, 1)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://btyl5jsjnc0uf"]
+
+[ext_resource type="Texture2D" uid="uid://b60ab5024relt" path="res://Objects/Images/shelf.png" id="1_j13od"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ey7ac"]
+size = Vector2(663, 1076)
+
+[node name="Vial" type="Sprite2D"]
+z_index = 1
+position = Vector2(-9, -25)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_j13od")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1, 1)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-13.5, -106)
+shape = SubResource("RectangleShape2D_ey7ac")

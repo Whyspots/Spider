@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://coo6sbkl0fti3"]
+
+[ext_resource type="Texture2D" uid="uid://bxunwvuwy15vv" path="res://Objects/Images/drain.png" id="1_2ud0o"]
+
+[node name="Vial" type="Sprite2D"]
+z_index = 1
+position = Vector2(3, -17)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_2ud0o")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1, 1)
+collision_layer = 16

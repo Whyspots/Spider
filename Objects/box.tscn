@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://btqigdlketswf"]
+
+[ext_resource type="Texture2D" uid="uid://cdonnsmy3e6ia" path="res://Objects/Images/box_biohazard.png" id="1_1bhu2"]
+[ext_resource type="Script" path="res://Objects/Scripts/box.gd" id="2_8u8rr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ey7ac"]
+size = Vector2(373.333, 293.333)
+
+[node name="Vial" type="Sprite2D"]
+z_index = 1
+position = Vector2(3, -33)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_1bhu2")
+script = ExtResource("2_8u8rr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1, 1)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-21, -47.6667)
+shape = SubResource("RectangleShape2D_ey7ac")
