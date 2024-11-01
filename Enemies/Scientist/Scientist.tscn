@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://on6degdt1i4o"]
+[gd_scene load_steps=26 format=3 uid="uid://on6degdt1i4o"]
 
 [ext_resource type="Script" path="res://Enemies/Scripts/enemy.gd" id="1_01bls"]
 [ext_resource type="Texture2D" uid="uid://1fgw3r56s0iy" path="res://Player/Sprites/Shadow.png" id="1_iw5pk"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dmit0nmthj5nx" path="res://Enemies/General Sprites/question_mark.png" id="5_offjt"]
 [ext_resource type="Script" path="res://Enemies/Scripts/enemy_state_machine.gd" id="5_yn7mp"]
 [ext_resource type="Script" path="res://Enemies/Scripts/attack_area.gd" id="6_hvwob"]
+[ext_resource type="Texture2D" uid="uid://jx61aru8qgky" path="res://Enemies/General Sprites/exclamation.png" id="6_hydef"]
 [ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_idle.gd" id="6_vlgxa"]
 [ext_resource type="PackedScene" uid="uid://ck4iimxl2i3cf" path="res://Enemies/vision_area.tscn" id="6_wds5m"]
 [ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_wander.gd" id="7_44ejo"]
@@ -248,8 +249,13 @@ position = Vector2(-20.0001, -374.286)
 scale = Vector2(0.228571, 0.228571)
 texture = ExtResource("5_offjt")
 
+[node name="ExclamationMark" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-20.0001, -374.286)
+scale = Vector2(0.228571, 0.228571)
+texture = ExtResource("6_hydef")
+
 [node name="AttackArea" type="Area2D" parent="."]
-scale = Vector2(1, 1)
 script = ExtResource("6_hvwob")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]

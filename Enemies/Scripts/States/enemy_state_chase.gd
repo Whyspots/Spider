@@ -11,6 +11,8 @@ signal kill()
 @export var state_aggro_duration : float = 5
 @export var next_state : EnemyState
 
+@onready var exclamation_mark: Sprite2D = $"../../ExclamationMark"
+
 var _timer : float = 0.0
 var _direction : Vector2
 var _can_see_player : bool = false
@@ -28,9 +30,11 @@ func enter() -> void:
 	_timer = state_aggro_duration
 	
 	enemy.update_animation(anim_name)
-	
+	exclamation_mark.visible = true
 	enemy.navigation_agent.navigation_finished.emit()
 	_finished = false
+	
+	
 	enemy.navigation_agent.set_target_position(PlayerManager.player.global_position)
 	
 	pass
@@ -38,6 +42,7 @@ func enter() -> void:
 ## What happens when enemy exits [EnemyState]?
 func exit() -> void:
 	_can_see_player = false
+	exclamation_mark.visible = false
 	pass
 
 ## What happens during the _process update in this [EnemyState]
