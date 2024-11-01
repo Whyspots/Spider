@@ -569,5 +569,6 @@ script = ExtResource("14_qknq8")
 texture_filter = 2
 rotation = -1.5708
 scale = Vector2(5, 5)
+texture = null
 
 [connection signal="hooked" from="Web_Pivot/Web_Chain" to="." method="_on_web_chain_hooked"]
