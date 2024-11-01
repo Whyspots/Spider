@@ -7,6 +7,7 @@ signal finished
 @onready var hit_box: HitBox = $HitBox
 @export var fear_radius = 2200
 @export var fear = 25
+@onready var collision_box: StaticBody2D = $StaticBody2D
 
 
 func _ready():
@@ -25,15 +26,15 @@ func apply_fear_to_nearby_enemies():
 		if enemy and enemy.has_method("get_scared"):
 			var distance_to_enemy = global_position.distance_to(enemy.global_position)
 			if distance_to_enemy <= fear_radius:
-				enemy.get_scared(fear)
+				enemy.get_scared(fear, collision_box.global_position)
 
 func topple() -> void:
 	animation_player.play("toppling")
 	animation_player.animation_finished.connect(_on_animation_finished)
-	apply_fear_to_nearby_enemies()
 	
 func _on_animation_finished(name: String) -> void:
 	finished.emit()
+	apply_fear_to_nearby_enemies()
 		
 func get_pulled_to(target_position):
 		await get_tree().create_timer(0.2).timeout

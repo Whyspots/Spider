@@ -14,6 +14,8 @@ var _timer : float = 0.0
 var _look_timer : float = 0.0
 var directions = enemy.DIR_4 
 
+@onready var question_mark: Sprite2D = $"../../QuestionMark"
+
 ## What happens when we initialize this [EnemyState]?
 func init() -> void:
 	pass
@@ -31,6 +33,7 @@ func enter() -> void:
 
 ## What happens when enemy exits [EnemyState]?
 func exit() -> void:
+	question_mark.visible = false
 	pass
 
 ## What happens during the _process update in this [EnemyState]

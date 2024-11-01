@@ -36,6 +36,7 @@ func initialize(_enemy : Enemy) -> void:
 		change_state(states[0])
 		process_mode = Node.PROCESS_MODE_INHERIT
 	
+	
 func change_state(new_state : EnemyState) -> void:
 	if new_state == null || new_state == current_state:
 		return
