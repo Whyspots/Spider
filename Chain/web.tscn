@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://difja7of4bkvm"]
+
+[ext_resource type="Texture2D" uid="uid://dwt3o5orfmv34" path="res://Chain/websprite_red.png" id="1_7jx48"]
+[ext_resource type="Script" path="res://Chain/scripts/web.gd" id="2_173hl"]
+
+[node name="Web_Chain" type="Sprite2D"]
+texture_repeat = 2
+rotation = 4.71239
+texture = ExtResource("1_7jx48")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 0)
+script = ExtResource("2_173hl")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 150)
+collision_mask = 16
