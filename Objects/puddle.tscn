@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy35pbit2yl7u"]
+
+[ext_resource type="Texture2D" uid="uid://ci420inrcq816" path="res://Objects/Images/spill.png" id="1_axy8r"]
+
+[node name="Vial" type="Sprite2D"]
+scale = Vector2(0.199, 0.199)
+texture = ExtResource("1_axy8r")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1, 1)
+collision_layer = 16
