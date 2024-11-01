@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnqllqt2p61x4"
-path="res://.godot/imported/spider-web-transparent-png-17.png-8beab5577fd7718d3559092d5f20b8fe.ctex"
+uid="uid://cpjx4d01md6g4"
+path="res://.godot/imported/glass_shattered.png-6d5ada25bc2fc14a0632302445317dfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/FearMeter/spider-web-transparent-png-17.png"
-dest_files=["res://.godot/imported/spider-web-transparent-png-17.png-8beab5577fd7718d3559092d5f20b8fe.ctex"]
+source_file="res://Objects/Images/glass_shattered.png"
+dest_files=["res://.godot/imported/glass_shattered.png-6d5ada25bc2fc14a0632302445317dfc.ctex"]
 
 [params]
 
