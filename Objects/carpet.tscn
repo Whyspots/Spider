@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b56h534nqrtky"]
+
+[ext_resource type="Texture2D" uid="uid://cu5b28ma4dmb6" path="res://Objects/Images/carpet.png" id="1_s65uf"]
+
+[node name="Vial" type="Sprite2D"]
+position = Vector2(24, -3)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_s65uf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1, 1)
+collision_layer = 16
