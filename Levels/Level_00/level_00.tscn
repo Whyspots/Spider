@@ -37,7 +37,7 @@ navigation_polygon = SubResource("NavigationPolygon_fwdnj")
 position = Vector2(11, 0)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("3_n100n")]
-position = Vector2(1649, 799)
+position = Vector2(1294, 220)
 
 [node name="SkeletonModel" parent="." instance=ExtResource("4_483gp")]
 position = Vector2(1642, 168)
@@ -157,10 +157,8 @@ position = Vector2(470, 803)
 scale = Vector2(0.322143, 0.345)
 
 [node name="Trash" parent="." instance=ExtResource("9_677sg")]
-
 z_index = -1
 position = Vector2(84, 1589)
-
 scale = Vector2(4, 4)
 
 [node name="Trash2" parent="." instance=ExtResource("9_677sg")]
