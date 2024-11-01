@@ -1,7 +1,7 @@
 [gd_scene load_steps=41 format=3 uid="uid://bwlfico6q2s0g"]
 
 [ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_mqew6"]
-[ext_resource type="Texture2D" uid="uid://c6wjeq3i76vo6" path="res://Player/Sprites/PlayerSprite02.png" id="2_5khwv"]
+[ext_resource type="Texture2D" uid="uid://cbfhe7bbmxipk" path="res://Player/Sprites/side_walk_1-0.png" id="2_if4bg"]
 [ext_resource type="Script" path="res://Player/Scripts/player_state_machine.gd" id="3_6d0f4"]
 [ext_resource type="Texture2D" uid="uid://1fgw3r56s0iy" path="res://Player/Sprites/Shadow.png" id="3_tfffs"]
 [ext_resource type="Texture2D" uid="uid://dcd5avhhkwaau" path="res://Player/Sprites/AttackSprite01.png" id="3_ucn18"]
@@ -28,10 +28,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 1,
-"values": [0]
+"values": []
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -75,19 +75,19 @@ resource_name = "attack_down"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [0, 3]
+"values": []
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -99,7 +99,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath(".:show_behind_parent")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -111,7 +111,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath(".:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -127,19 +127,19 @@ resource_name = "attack_side"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [8, 11]
+"values": []
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -151,7 +151,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath(".:show_behind_parent")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -163,7 +163,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath(".:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -179,19 +179,19 @@ resource_name = "attack_up"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [4, 7]
+"values": []
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -203,7 +203,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath(".:show_behind_parent")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -215,7 +215,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath(".:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -292,7 +292,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [8]
 }
 
 [sub_resource type="Animation" id="Animation_lcmxl"]
@@ -308,7 +308,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [21, 23]
+"values": [4, 7]
 }
 
 [sub_resource type="Animation" id="Animation_w4nx1"]
@@ -324,7 +324,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [27, 29]
+"values": [12, 15]
 }
 
 [sub_resource type="Animation" id="Animation_4cx3g"]
@@ -340,7 +340,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [24, 26]
+"values": [16, 19]
 }
 
 [sub_resource type="Animation" id="Animation_fjwwu"]
@@ -354,10 +354,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0, 2]
+"values": [8]
 }
 
 [sub_resource type="Animation" id="Animation_ng54u"]
@@ -371,10 +371,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [6, 8]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_himny"]
@@ -388,10 +388,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [3, 5]
+"values": [20]
 }
 
 [sub_resource type="Animation" id="Animation_reyat"]
@@ -408,7 +408,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [9, 12]
+"values": [8, 11]
 }
 
 [sub_resource type="Animation" id="Animation_14t05"]
@@ -425,7 +425,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [17, 20]
+"values": [0, 3]
 }
 
 [sub_resource type="Animation" id="Animation_k8nrd"]
@@ -442,7 +442,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [13, 16]
+"values": [20, 23]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h1a8n"]
@@ -463,6 +463,7 @@ _data = {
 radius = 20.0
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.3, 0.3)
 collision_mask = 16
 motion_mode = 1
 wall_min_slide_angle = 0.174533
@@ -474,9 +475,10 @@ shape = SubResource("CircleShape2D_5m17y")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -19)
-texture = ExtResource("2_5khwv")
-hframes = 16
-vframes = 3
+texture = ExtResource("2_if4bg")
+hframes = 4
+vframes = 6
+frame = 8
 
 [node name="ShadowSprite" type="Sprite2D" parent="Sprite2D"]
 modulate = Color(0, 0, 0, 0.666667)
@@ -488,6 +490,7 @@ texture = ExtResource("3_tfffs")
 position = Vector2(2, 10)
 texture = ExtResource("3_ucn18")
 hframes = 12
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D/AttackEffectSprite"]
 libraries = {
@@ -542,6 +545,8 @@ script = ExtResource("10_nm2ky")
 max_polyphony = 4
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-10, -96.6667)
+scale = Vector2(2.49444, 2.49444)
 texture = ExtResource("11_d767x")
 texture_scale = 0.75
 
@@ -561,6 +566,8 @@ debug_color = Color(0.317358, 0.50734, 0, 0.42)
 script = ExtResource("14_qknq8")
 
 [node name="Web_Chain" parent="Web_Pivot" instance=ExtResource("14_7dp2r")]
+texture_filter = 2
 rotation = -1.5708
+scale = Vector2(5, 5)
 
 [connection signal="hooked" from="Web_Pivot/Web_Chain" to="." method="_on_web_chain_hooked"]

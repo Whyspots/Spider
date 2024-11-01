@@ -143,12 +143,13 @@ energy = 0.35
 texture = ExtResource("15_2hhih")
 
 [node name="Vial17" parent="." instance=ExtResource("16_6iarn")]
+z_index = 0
 position = Vector2(651, 290)
 scale = Vector2(0.2965, 0.2965)
 
 [node name="Vase2" parent="." instance=ExtResource("16_b1pve")]
-position = Vector2(795, 1480)
-scale = Vector2(0.3, 0.3)
+position = Vector2(470, 803)
+scale = Vector2(0.322143, 0.345)
 
 [node name="Trash" parent="." instance=ExtResource("9_677sg")]
 position = Vector2(84, 1589)
