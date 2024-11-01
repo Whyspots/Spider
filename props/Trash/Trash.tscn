@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7iblkw22xt4l"]
+[gd_scene load_steps=10 format=3 uid="uid://b7iblkw22xt4l"]
 
 [ext_resource type="Texture2D" uid="uid://c8nv1wacm2noq" path="res://props/Sprites/trash.png" id="1_7qj55"]
 [ext_resource type="Script" path="res://props/Trash/trash.gd" id="1_l2mn6"]
 [ext_resource type="PackedScene" uid="uid://d1khdfni2jgu1" path="res://GeneralNodes/HitBox/hit_box.tscn" id="2_nymcu"]
 [ext_resource type="Texture2D" uid="uid://d05oxy04ycqaj" path="res://props/Sprites/trash_fallen_upright.png" id="4_b706k"]
+[ext_resource type="AudioStream" uid="uid://dlgnfc50mylon" path="res://SFX/sfx_trash_can_fall.mp3" id="5_dpdby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bil22"]
 size = Vector2(22.0313, 13)
@@ -119,7 +120,6 @@ _data = {
 
 [node name="Trash" type="Node2D"]
 script = ExtResource("1_l2mn6")
-fear_radius = 2200
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.44369, -1.33555)
@@ -147,3 +147,6 @@ shape = SubResource("RectangleShape2D_bil22")
 libraries = {
 "": SubResource("AnimationLibrary_kng5g")
 }
+
+[node name="FallOver" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_dpdby")

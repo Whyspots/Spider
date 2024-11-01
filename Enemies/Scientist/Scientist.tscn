@@ -237,10 +237,12 @@ libraries = {
 autoplay = "idle_down"
 
 [node name="FearMeter" parent="." instance=ExtResource("4_j46bs")]
+z_index = 1
 offset_left = -144.0
 offset_top = 376.0
 offset_right = 144.0
 offset_bottom = 412.0
+value = 0.0
 metadata/_edit_use_anchors_ = true
 
 [node name="QuestionMark" type="Sprite2D" parent="."]

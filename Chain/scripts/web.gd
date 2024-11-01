@@ -1,7 +1,7 @@
 extends Sprite2D
 @onready var ray_cast = $RayCast2D
 var distance: float = 150.0
- 
+@onready var shoot_web_sound: AudioStreamPlayer2D = $ShootWeb
 signal hooked(hooked_position)
  
 func interpolate(length, duration = 0.2):
@@ -13,6 +13,7 @@ func interpolate(length, duration = 0.2):
  
 func _input(event):
 	if event.is_action_pressed("hook"):
+		shoot_web_sound.play()
 		interpolate(await check_collision(), 0.2)
 		await get_tree().create_timer(0.2).timeout
 		reverse_interpolate()

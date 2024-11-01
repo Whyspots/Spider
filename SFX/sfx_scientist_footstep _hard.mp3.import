@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bn4psttjbe5mf"
+path="res://.godot/imported/sfx_scientist_footstep _hard.mp3-a509fce9fae355040cf2fedb0fc2a65a.mp3str"
+
+[deps]
+
+source_file="res://SFX/sfx_scientist_footstep _hard.mp3"
+dest_files=["res://.godot/imported/sfx_scientist_footstep _hard.mp3-a509fce9fae355040cf2fedb0fc2a65a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
