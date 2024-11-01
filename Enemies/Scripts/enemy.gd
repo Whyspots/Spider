@@ -2,7 +2,7 @@ class_name Enemy extends CharacterBody2D
 
 signal direction_changed( new_direction : Vector2 )
 signal enemy_damaged()
-signal enemy_fear_instilled()
+signal enemy_fear_instilled( source_position : Vector2 )
 
 const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP ]
 
@@ -38,6 +38,8 @@ var navigation_points : Dictionary = {}
 #@onready var hit_box : HitBox = $HitBox
 @onready var state_machine : EnemyStateMachine = $EnemyStateMachine
 @onready var navigation_agent: NavigationAgent2D = $CollisionShape2D/NavigationAgent
+
+
 
 func _ready() -> void:
 	for point in get_parent().get_children():
@@ -89,5 +91,7 @@ func navigate_to_room(room : String) -> void:
 	var destination : Vector2 = navigation_points[room]
 	navigation_agent.set_target_position(destination)
 	
-func get_scared(fear_increase) -> void:
+	
+func get_scared( fear_increase : float, source_posn : Vector2 ) -> void:
+	enemy_fear_instilled.emit(source_posn)
 	self.fear_meter.fear += fear_increase
