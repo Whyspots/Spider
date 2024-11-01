@@ -190,4 +190,4 @@ layer_0/tile_data = PackedInt32Array(0, 262144, 5, 65536, 131072, 3, 131072, 327
 script = ExtResource("2_fp67i")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.125911, 0.125911, 0.125911, 1)
+color = Color(0.109804, 0.121569, 0.188235, 0.980392)

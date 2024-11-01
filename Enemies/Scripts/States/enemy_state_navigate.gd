@@ -42,7 +42,7 @@ func physics( delta : float ) -> EnemyState:
 		# Destination point for the navigation
 		var destination : Vector2 = enemy.navigation_agent.get_next_path_position()
 		# Start point for navigation
-		var start : Vector2 = enemy.global_position
+		var start : Vector2 = $"../../CollisionShape2D".global_position
 
 		# Get the direction needed
 		enemy.set_direction((destination - start).normalized())
