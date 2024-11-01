@@ -5,9 +5,6 @@ class_name EnemyStateNavigate extends EnemyState
 @export var navigate_speed : float = 20.0
 
 @export_category("AI")
-#@export var state_animation_duration : float = 0.7
-#@export var state_cycle_min : int = 1
-#@export var state_cycle_max : int = 3
 @export var next_state : EnemyState
 
 var _timer : float = 0.0
@@ -42,7 +39,7 @@ func physics( delta : float ) -> EnemyState:
 		# Destination point for the navigation
 		var destination : Vector2 = enemy.navigation_agent.get_next_path_position()
 		# Start point for navigation
-		var start : Vector2 = enemy.global_position
+		var start : Vector2 = $"../../CollisionShape2D".global_position
 
 		# Get the direction needed
 		enemy.set_direction((destination - start).normalized())

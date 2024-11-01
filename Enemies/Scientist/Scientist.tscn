@@ -1,17 +1,19 @@
-[gd_scene load_steps=18 format=3 uid="uid://on6degdt1i4o"]
+[gd_scene load_steps=20 format=3 uid="uid://on6degdt1i4o"]
 
 [ext_resource type="Script" path="res://Enemies/Scripts/enemy.gd" id="1_01bls"]
 [ext_resource type="Texture2D" uid="uid://1fgw3r56s0iy" path="res://Player/Sprites/Shadow.png" id="1_iw5pk"]
-[ext_resource type="Texture2D" uid="uid://dk2nfcij6c75j" path="res://Enemies/Scientist/Slime.png" id="2_xllfl"]
+[ext_resource type="Texture2D" uid="uid://lxa8tuh1ovig" path="res://Enemies/Scientist/sciframes_0000-0.png" id="3_kjqte"]
 [ext_resource type="PackedScene" uid="uid://ciinxo8ungh40" path="res://Enemies/FearMeter/fear_meter.tscn" id="4_j46bs"]
 [ext_resource type="Script" path="res://Enemies/Scripts/enemy_state_machine.gd" id="5_yn7mp"]
 [ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_idle.gd" id="6_vlgxa"]
 [ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_wander.gd" id="7_44ejo"]
 [ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_navigate.gd" id="8_lgyf4"]
+[ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_search.gd" id="8_ufcpk"]
+[ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_investigate.gd" id="9_35h6i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dgrff"]
-radius = 5.0
-height = 24.0
+radius = 64.0
+height = 184.0
 
 [sub_resource type="Animation" id="Animation_1p7xl"]
 length = 0.001
@@ -52,10 +54,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -82,10 +84,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [6, 7, 8]
+"values": [8]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -112,10 +114,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [3, 4, 5]
+"values": [19]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -132,7 +134,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_uymuv"]
 resource_name = "walk_down"
-length = 0.7
 loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
@@ -142,27 +143,14 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [9, 10, 11, 9]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5, 0.7),
-"transitions": PackedFloat32Array(-2, -2, -2, -2),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, -19), Vector2(0, -19), Vector2(0, -23), Vector2(0, -19)]
+"values": [0, 7]
 }
 
 [sub_resource type="Animation" id="Animation_62or7"]
 resource_name = "walk_side"
-length = 0.7
 loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
@@ -172,27 +160,14 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [15, 16, 17, 15]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5, 0.7),
-"transitions": PackedFloat32Array(-2, -2, -2, -2),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, -19), Vector2(0, -19), Vector2(0, -23), Vector2(0, -19)]
+"values": [8, 17]
 }
 
 [sub_resource type="Animation" id="Animation_m3ofq"]
 resource_name = "walk_up"
-length = 0.7
 loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
@@ -202,22 +177,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [12, 13, 14, 12]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5, 0.7),
-"transitions": PackedFloat32Array(-2, -2, -2, -2),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, -19), Vector2(0, -19), Vector2(0, -23), Vector2(0, -19)]
+"values": [18, 26]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1an4m"]
@@ -232,6 +195,8 @@ _data = {
 }
 
 [node name="Scientist" type="CharacterBody2D"]
+position = Vector2(-2, -78)
+scale = Vector2(0.3, 0.3)
 collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_01bls")
@@ -239,18 +204,24 @@ max_fear = 100.0
 
 [node name="ShadowSprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(0, 1)
+position = Vector2(6.66669, 263.333)
+scale = Vector2(0.781249, 1.0026)
 texture = ExtResource("1_iw5pk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -19)
-texture = ExtResource("2_xllfl")
-hframes = 16
-vframes = 2
+texture = ExtResource("3_kjqte")
+hframes = 4
+vframes = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 260)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_dgrff")
+
+[node name="NavigationAgent" type="NavigationAgent2D" parent="CollisionShape2D"]
+debug_enabled = true
+debug_path_custom_color = Color(0, 1, 0.541176, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -259,10 +230,11 @@ libraries = {
 autoplay = "idle_down"
 
 [node name="FearMeter" parent="." instance=ExtResource("4_j46bs")]
-offset_left = -24.0
-offset_top = 10.0
-offset_right = 24.0
-offset_bottom = 16.0
+offset_left = -144.0
+offset_top = 376.0
+offset_right = 144.0
+offset_bottom = 412.0
+metadata/_edit_use_anchors_ = true
 
 [node name="EnemyStateMachine" type="Node" parent="."]
 script = ExtResource("5_yn7mp")
@@ -277,14 +249,17 @@ script = ExtResource("7_44ejo")
 wander_speed = 30.0
 next_state = NodePath("../Idle")
 
+[node name="Search" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("8_ufcpk")
+
 [node name="Navigate" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("8_lgyf4")
-navigate_speed = 40.0
+navigate_speed = 100.0
 next_state = NodePath("../Idle")
 
-[node name="NavigationAgent" type="NavigationAgent2D" parent="."]
-debug_enabled = true
-debug_path_custom_color = Color(0, 1, 0.541176, 1)
+[node name="Investigate" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("9_35h6i")
+next_state = NodePath("../Navigate")
 
-[connection signal="navigation_finished" from="NavigationAgent" to="EnemyStateMachine/Navigate" method="_on_navigation_agent_navigation_finished"]
-[connection signal="target_reached" from="NavigationAgent" to="EnemyStateMachine/Navigate" method="_on_navigation_agent_target_reached"]
+[connection signal="navigation_finished" from="CollisionShape2D/NavigationAgent" to="EnemyStateMachine/Navigate" method="_on_navigation_agent_navigation_finished"]
+[connection signal="target_reached" from="CollisionShape2D/NavigationAgent" to="EnemyStateMachine/Navigate" method="_on_navigation_agent_target_reached"]

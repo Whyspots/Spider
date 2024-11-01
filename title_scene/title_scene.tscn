@@ -50,14 +50,14 @@ _data = {
 
 [sub_resource type="Gradient" id="Gradient_crh3e"]
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_h5riq"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t2n82"]
 gradient = SubResource("Gradient_crh3e")
 
 [sub_resource type="Curve" id="Curve_2e2dq"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.26087, 1), 0.0, 0.0, 0, 0, Vector2(0.73913, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="CurveTexture" id="CurveTexture_3t4xl"]
+[sub_resource type="CurveTexture" id="CurveTexture_kiw2m"]
 curve = SubResource("Curve_2e2dq")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l720e"]
@@ -71,9 +71,9 @@ radial_accel_min = -14.95
 radial_accel_max = 31.03
 scale_min = 0.2
 scale_max = 0.2
-scale_curve = SubResource("CurveTexture_3t4xl")
+scale_curve = SubResource("CurveTexture_kiw2m")
 color = Color(1, 0, 1, 1)
-color_ramp = SubResource("GradientTexture1D_h5riq")
+color_ramp = SubResource("GradientTexture1D_t2n82")
 hue_variation_min = -2.23517e-08
 hue_variation_max = 0.13
 turbulence_enabled = true

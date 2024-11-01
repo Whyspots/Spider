@@ -31,17 +31,17 @@ navigation_polygon = SubResource("NavigationPolygon_fwdnj")
 position = Vector2(11, 0)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("3_n100n")]
-position = Vector2(1383, 1389)
+position = Vector2(1028, 415)
 
 [node name="SkeletonModel" parent="." instance=ExtResource("4_483gp")]
 position = Vector2(1642, 168)
 scale = Vector2(0.422333, 0.472186)
 
-[node name="Area2D" parent="." instance=ExtResource("5_py7cn")]
+[node name="Table" parent="." instance=ExtResource("5_py7cn")]
 z_index = 3
 position = Vector2(1758, 1530)
 
-[node name="Area2D2" parent="." instance=ExtResource("6_kx1f0")]
+[node name="Couch" parent="." instance=ExtResource("6_kx1f0")]
 position = Vector2(359, 922)
 
 [node name="Vial" parent="." instance=ExtResource("7_vd1nq")]
@@ -50,7 +50,7 @@ position = Vector2(1653, 1043)
 scale = Vector2(0.494667, 0.494667)
 
 [node name="Scientist" parent="." instance=ExtResource("8_sm2o3")]
-position = Vector2(1152, 354)
+position = Vector2(1158, 345)
 navigation_rooms = Array[String](["Office", "BreakRoom", "Lab"])
 
 [node name="Office" type="Marker2D" parent="." groups=["Navigation Points"]]
@@ -61,6 +61,10 @@ position = Vector2(348, 1169)
 
 [node name="Lab" type="Marker2D" parent="." groups=["Navigation Points"]]
 position = Vector2(1290, 1365)
+
+
+[node name="SkeletonModel2" parent="." instance=ExtResource("4_483gp")]
+position = Vector2(1314, 1063)
 
 [node name="Trash" parent="." instance=ExtResource("9_677sg")]
 position = Vector2(1090, 1255)
