@@ -299,3 +299,4 @@ next_state = NodePath("../Search")
 [connection signal="navigation_finished" from="CollisionShape2D/NavigationAgent" to="EnemyStateMachine/Investigate" method="_on_navigation_agent_navigation_finished"]
 [connection signal="navigation_finished" from="CollisionShape2D/NavigationAgent" to="EnemyStateMachine/Chase" method="_on_navigation_agent_navigation_finished"]
 [connection signal="target_reached" from="CollisionShape2D/NavigationAgent" to="EnemyStateMachine/Navigate" method="_on_navigation_agent_target_reached"]
+[connection signal="kill" from="AttackArea" to="." method="_on_attack_area_kill"]
