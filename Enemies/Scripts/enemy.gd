@@ -3,6 +3,7 @@ class_name Enemy extends CharacterBody2D
 signal direction_changed( new_direction : Vector2 )
 signal enemy_damaged()
 signal enemy_fear_instilled( source_position : Vector2 )
+signal kill()
 
 const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP ]
 
@@ -95,3 +96,8 @@ func navigate_to_room(room : String) -> void:
 func get_scared( fear_increase : float, source_posn : Vector2 ) -> void:
 	enemy_fear_instilled.emit(source_posn)
 	self.fear_meter.fear += fear_increase
+
+
+func _on_attack_area_kill() -> void:
+	kill.emit()
+	pass # Replace with function body.
