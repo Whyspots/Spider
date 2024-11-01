@@ -37,7 +37,7 @@ var navigation_points : Dictionary = {}
 @onready var sprite : Sprite2D = $Sprite2D
 #@onready var hit_box : HitBox = $HitBox
 @onready var state_machine : EnemyStateMachine = $EnemyStateMachine
-@onready var navigation_agent: NavigationAgent2D = $NavigationAgent
+@onready var navigation_agent: NavigationAgent2D = $ShadowSprite2D/NavigationAgent
 
 func _ready() -> void:
 	for point in get_parent().get_children():
