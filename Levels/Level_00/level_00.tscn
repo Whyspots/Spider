@@ -62,7 +62,6 @@ position = Vector2(348, 1169)
 [node name="Lab" type="Marker2D" parent="." groups=["Navigation Points"]]
 position = Vector2(1290, 1365)
 
-
 [node name="SkeletonModel2" parent="." instance=ExtResource("4_483gp")]
 position = Vector2(1314, 1063)
 

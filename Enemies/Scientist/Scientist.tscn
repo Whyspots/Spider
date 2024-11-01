@@ -249,8 +249,9 @@ script = ExtResource("7_44ejo")
 wander_speed = 30.0
 next_state = NodePath("../Idle")
 
-[node name="Search" type="Node" parent="EnemyStateMachine"]
+[node name="Search" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("8_ufcpk")
+next_state = NodePath("../Navigate")
 
 [node name="Navigate" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("8_lgyf4")
@@ -259,7 +260,7 @@ next_state = NodePath("../Idle")
 
 [node name="Investigate" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("9_35h6i")
-next_state = NodePath("../Navigate")
+next_state = NodePath("../Search")
 
 [connection signal="navigation_finished" from="CollisionShape2D/NavigationAgent" to="EnemyStateMachine/Navigate" method="_on_navigation_agent_navigation_finished"]
 [connection signal="target_reached" from="CollisionShape2D/NavigationAgent" to="EnemyStateMachine/Navigate" method="_on_navigation_agent_target_reached"]

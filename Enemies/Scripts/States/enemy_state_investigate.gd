@@ -2,29 +2,22 @@ class_name EnemyStateInvestigate extends EnemyState
 
 ## The name of the idle animation
 @export var anim_name : String = "walk"
-@export var wander_speed : float = 20.0
+@export var investigate_speed : float = 100
 
 @export_category("AI")
-@export var state_animation_duration : float = 0.7
-@export var state_cycle_min : int = 1
-@export var state_cycle_max : int = 3
 @export var next_state : EnemyState
 
-var _timer : float = 0.0
-var _direction : Vector2
+var player : Player = PlayerManager.player
+var _finished = false
 
 ## What happens when we initialize this [EnemyState]?
 func init() -> void:
+	
 	pass
 
 ## What happens when enemy enters [EnemyState]?
 func enter() -> void:
-	_timer = randi_range(state_cycle_min, state_cycle_max) * state_animation_duration
-	var rand = randi_range(0, 3)
-	_direction = enemy.DIR_4[rand]
-	enemy.velocity = _direction * wander_speed
-	enemy.set_direction(_direction)
-	enemy.update_animation(anim_name)
+	
 	pass
 
 ## What happens when enemy exits [EnemyState]?
@@ -33,12 +26,29 @@ func exit() -> void:
 
 ## What happens during the _process update in this [EnemyState]
 func process( _delta : float ) -> EnemyState:
-	_timer -= _delta
 	
-	if _timer < 0:
-		return next_state
 	return null
 
 ## What happens during _physics_process update in this [EnemyState]?
-func physics( _delta : float ) -> EnemyState:
-	return null
+func physics( delta : float ) -> EnemyState:
+	if (not _finished):
+		# Destination point for the navigation
+		var destination : Vector2 = enemy.navigation_agent.get_next_path_position()
+		# Start point for navigation
+		var start : Vector2 = $"../../CollisionShape2D".global_position
+
+		# Get the direction needed
+		enemy.set_direction((destination - start).normalized())
+		enemy.update_animation(anim_name)
+		enemy.translate(enemy.direction * investigate_speed * delta)
+		
+		return null
+	
+	_finished = false
+	
+	return next_state
+
+func _on_navigation_agent_navigation_finished() -> void:
+	_finished = true
+	
+	pass # Replace with function body.
