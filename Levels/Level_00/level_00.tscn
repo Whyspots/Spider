@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dodi263wr6h7t"]
+[gd_scene load_steps=19 format=3 uid="uid://dodi263wr6h7t"]
 
 [ext_resource type="Script" path="res://Levels/Scripts/level.gd" id="1_sinoy"]
 [ext_resource type="PackedScene" uid="uid://qriwe38yj2op" path="res://Tile Maps/ground_01.tscn" id="2_vlxui"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cehj78wmlhwlo" path="res://Objects/couch_hideable.tscn" id="6_kx1f0"]
 [ext_resource type="PackedScene" uid="uid://dc4hhdtyd08fy" path="res://Objects/vial.tscn" id="7_vd1nq"]
 [ext_resource type="PackedScene" uid="uid://on6degdt1i4o" path="res://Enemies/Scientist/Scientist.tscn" id="8_sm2o3"]
+[ext_resource type="PackedScene" uid="uid://b7iblkw22xt4l" path="res://props/Trash/Trash.tscn" id="9_677sg"]
 [ext_resource type="PackedScene" uid="uid://btyl5jsjnc0uf" path="res://Objects/shelf.tscn" id="9_usw7q"]
 [ext_resource type="PackedScene" uid="uid://djotgbwb0bj7t" path="res://Objects/computer_table.tscn" id="11_6i4t5"]
 [ext_resource type="PackedScene" uid="uid://btqigdlketswf" path="res://Objects/box.tscn" id="12_7cpxb"]
@@ -15,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://coo6sbkl0fti3" path="res://Objects/drain.tscn" id="14_jlnr8"]
 [ext_resource type="Texture2D" uid="uid://bur36ki3n2bb0" path="res://Player/Sprites/PlayerLightField.png" id="15_2hhih"]
 [ext_resource type="PackedScene" uid="uid://bnkg2fismbpey" path="res://Objects/glass_pane.tscn" id="16_6iarn"]
+[ext_resource type="PackedScene" uid="uid://c7ymcdg70joja" path="res://Objects/vase.tscn" id="16_b1pve"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_fwdnj"]
 vertices = PackedVector2Array(636, 275, 636, 175, 836, 175, 836, 775, 1436, 525, 936, 525, 936, 175, 1736, 175, 1736, 525, 1636, 525, 1436, 775, 1636, 775, 1736, 775, 1736, 825, 836, 825, 936, 1375, 936, 1125, 1736, 1125, 1736, 1575, 936, 1575, 936, 1425, 836, 1375, 836, 1425, 836, 1575, 36, 1575, 36, 775, 636, 775, 636, 375, 536, 275, 536, 375, 536, 525, 36, 525, 36, 175, 536, 175, 736, 75, 686, 75, 686, 25, 736, 25, 986, 75, 936, 75, 936, 25, 986, 25, 1136, 75, 1086, 75, 1086, 25, 1136, 25, 1286, 75, 1236, 75, 1236, 25, 1286, 25, 1436, 75, 1386, 75, 1386, 25, 1436, 25, 1898.21, -141.141, 1914.78, 1782.86, 1836, 1675, 1836, -75, -112.32, -152.859, -64, -75, -216.609, 1771.14, -64, 1675)
@@ -82,7 +84,6 @@ position = Vector2(1703, 269)
 scale = Vector2(0.277143, 0.292143)
 
 [node name="Vial5" parent="." instance=ExtResource("11_6i4t5")]
-z_index = 0
 position = Vector2(1044, 336)
 
 [node name="Vial6" parent="." instance=ExtResource("12_7cpxb")]
@@ -96,39 +97,32 @@ position = Vector2(67, 1141)
 flip_h = true
 
 [node name="Vial9" parent="." instance=ExtResource("12_7cpxb")]
-z_index = 0
 position = Vector2(964, 1152)
 flip_v = true
 
 [node name="Vial10" parent="." instance=ExtResource("13_fcotk")]
-z_index = 0
 position = Vector2(1083, 1138)
 
 [node name="Vial11" parent="." instance=ExtResource("13_fcotk")]
-z_index = 0
 position = Vector2(166, 219)
 
 [node name="Vial12" parent="." instance=ExtResource("12_7cpxb")]
-z_index = 0
 position = Vector2(289, 164)
 
 [node name="Vial13" parent="." instance=ExtResource("13_fcotk")]
-z_index = 0
 position = Vector2(1448, 1511)
 flip_h = true
 
 [node name="Vial14" parent="." instance=ExtResource("14_jlnr8")]
-z_index = 0
 position = Vector2(100, 472)
 
 [node name="Vial15" parent="." instance=ExtResource("14_jlnr8")]
 position = Vector2(1023, 55)
 
 [node name="Vial16" parent="." instance=ExtResource("14_jlnr8")]
-z_index = 0
 position = Vector2(992, 1523)
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="." groups=["Enemies"]]
 position = Vector2(333, 1084)
 scale = Vector2(2.93667, 2.97667)
 color = Color(0.834304, 0.608399, 0.468487, 1)
@@ -149,6 +143,27 @@ energy = 0.35
 texture = ExtResource("15_2hhih")
 
 [node name="Vial17" parent="." instance=ExtResource("16_6iarn")]
-z_index = 0
 position = Vector2(651, 290)
 scale = Vector2(0.2965, 0.2965)
+
+[node name="Vase2" parent="." instance=ExtResource("16_b1pve")]
+position = Vector2(795, 1480)
+scale = Vector2(0.3, 0.3)
+
+[node name="Trash" parent="." instance=ExtResource("9_677sg")]
+position = Vector2(84, 1589)
+scale = Vector2(4, 4)
+
+[node name="Trash2" parent="." instance=ExtResource("9_677sg")]
+z_index = -1
+position = Vector2(1732, 817)
+scale = Vector2(4, 4)
+
+[node name="Vial18" parent="." instance=ExtResource("12_7cpxb")]
+position = Vector2(174, 1514)
+
+[node name="Vial19" parent="." instance=ExtResource("13_fcotk")]
+position = Vector2(68, 1386)
+
+[node name="Vial20" parent="." instance=ExtResource("12_7cpxb")]
+position = Vector2(191, 1365)
