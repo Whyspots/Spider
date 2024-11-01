@@ -1,6 +1,4 @@
-
 [gd_scene load_steps=18 format=3 uid="uid://dodi263wr6h7t"]
-
 
 [ext_resource type="Script" path="res://Levels/Scripts/level.gd" id="1_sinoy"]
 [ext_resource type="PackedScene" uid="uid://qriwe38yj2op" path="res://Tile Maps/ground_01.tscn" id="2_vlxui"]
@@ -10,26 +8,20 @@
 [ext_resource type="PackedScene" uid="uid://cehj78wmlhwlo" path="res://Objects/couch_hideable.tscn" id="6_kx1f0"]
 [ext_resource type="PackedScene" uid="uid://dc4hhdtyd08fy" path="res://Objects/vase.tscn" id="7_vd1nq"]
 [ext_resource type="PackedScene" uid="uid://on6degdt1i4o" path="res://Enemies/Scientist/Scientist.tscn" id="8_sm2o3"]
-
 [ext_resource type="PackedScene" uid="uid://dfhxqix5kfs0v" path="res://Objects/shelf.tscn" id="9_usw7q"]
 [ext_resource type="PackedScene" uid="uid://bel1wwkxq4t4n" path="res://Objects/vial.tscn" id="10_7f2bl"]
 [ext_resource type="PackedScene" uid="uid://cgsht5fplhxxx" path="res://Objects/computer_table.tscn" id="11_6i4t5"]
 [ext_resource type="PackedScene" uid="uid://c14o8uey427lp" path="res://Objects/box.tscn" id="12_7cpxb"]
-[ext_resource type="PackedScene" uid="uid://bo7pum3obi4yb" path="res://Objects/biohazard_box.tscn" id="13_fcotk"]
+[ext_resource type="PackedScene" path="res://Objects/biohazard_box.tscn" id="13_fcotk"]
 [ext_resource type="PackedScene" uid="uid://cma13qyd3ktu7" path="res://Objects/drain.tscn" id="14_jlnr8"]
 [ext_resource type="Texture2D" uid="uid://bur36ki3n2bb0" path="res://Player/Sprites/PlayerLightField.png" id="15_2hhih"]
 [ext_resource type="PackedScene" uid="uid://bivu07dugal2c" path="res://Objects/glass_pane.tscn" id="16_6iarn"]
-
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_fwdnj"]
 vertices = PackedVector2Array(636, 275, 636, 175, 836, 175, 836, 775, 1436, 525, 936, 525, 936, 175, 1736, 175, 1736, 525, 1636, 525, 1436, 775, 1636, 775, 1736, 775, 1736, 825, 836, 825, 936, 1375, 936, 1125, 1736, 1125, 1736, 1575, 936, 1575, 936, 1425, 836, 1375, 836, 1425, 836, 1575, 36, 1575, 36, 775, 636, 775, 636, 375, 536, 275, 536, 375, 536, 525, 36, 525, 36, 175, 536, 175, 736, 75, 686, 75, 686, 25, 736, 25, 986, 75, 936, 75, 936, 25, 986, 25, 1136, 75, 1086, 75, 1086, 25, 1136, 25, 1286, 75, 1236, 75, 1236, 25, 1286, 25, 1436, 75, 1386, 75, 1386, 25, 1436, 25, 1898.21, -141.141, 1914.78, 1782.86, 1836, 1675, 1836, -75, -112.32, -152.859, -64, -75, -216.609, 1771.14, -64, 1675)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(7, 8, 9), PackedInt32Array(4, 7, 9, 10), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(10, 11, 14), PackedInt32Array(3, 10, 14), PackedInt32Array(15, 16, 17, 18), PackedInt32Array(18, 19, 20), PackedInt32Array(15, 18, 20, 21), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 23, 24, 25, 26), PackedInt32Array(21, 22, 26), PackedInt32Array(14, 21, 26), PackedInt32Array(3, 14, 26, 27), PackedInt32Array(0, 3, 27), PackedInt32Array(28, 0, 27, 29), PackedInt32Array(29, 30, 31, 32), PackedInt32Array(28, 29, 32), PackedInt32Array(33, 28, 32), PackedInt32Array(34, 35, 36, 37), PackedInt32Array(38, 39, 40, 41), PackedInt32Array(42, 43, 44, 45), PackedInt32Array(46, 47, 48, 49), PackedInt32Array(50, 51, 52, 53), PackedInt32Array(54, 55, 56, 57), PackedInt32Array(58, 54, 57, 59), PackedInt32Array(60, 58, 59, 61), PackedInt32Array(55, 60, 61, 56)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-136, -178, 1923, -166, 1940, 1808, -243, 1796)])
 agent_radius = 25.0
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_v5alb"]
-closed = false
-polygon = PackedVector2Array(848.465, 1591.47, 848.465, 1451.47, 895.465, 1450.47, 899.465, 1593.47, 1740.46, 1599.47, 1745.46, 1599.47, 1754.46, 897.475, 894.465, 896.475, 888.465, 1143.47, 852.465, 1148.47, 855.465, 863.475, 1742.46, 860.475, 1747.46, 593.475, 1651.46, 593.475, 1648.46, 556.475, 1745.46, 554.475, 1747.46, -16.525, 887.465, -17.525, 887.465, 555.475, 1388.46, 553.475, 1386.46, 590.475, 849.465, 592.475, 843.465, -18.525, -13.535, -11.525, -13.535, 556.475, 553.465, 555.475, 549.465, 406.475, 585.465, 406.475, 586.465, 590.475, -17.535, 599.475, -11.535, 1604.47, 848.465, 1607.47)
 
 [node name="Level00" type="Node2D"]
 script = ExtResource("1_sinoy")
@@ -42,9 +34,7 @@ navigation_polygon = SubResource("NavigationPolygon_fwdnj")
 position = Vector2(11, 0)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("3_n100n")]
-
 position = Vector2(1028, 415)
-
 
 [node name="SkeletonModel" parent="." instance=ExtResource("4_483gp")]
 position = Vector2(1642, 168)
@@ -75,7 +65,6 @@ position = Vector2(348, 1169)
 [node name="Lab" type="Marker2D" parent="." groups=["Navigation Points"]]
 position = Vector2(1290, 1365)
 
-
 [node name="Vial2" parent="." instance=ExtResource("9_usw7q")]
 z_index = -1
 position = Vector2(499, 727)
@@ -94,6 +83,7 @@ position = Vector2(1703, 269)
 scale = Vector2(0.277143, 0.292143)
 
 [node name="Vial5" parent="." instance=ExtResource("11_6i4t5")]
+z_index = 0
 position = Vector2(1044, 336)
 
 [node name="Vial6" parent="." instance=ExtResource("12_7cpxb")]
@@ -107,29 +97,36 @@ position = Vector2(67, 1141)
 flip_h = true
 
 [node name="Vial9" parent="." instance=ExtResource("12_7cpxb")]
+z_index = 0
 position = Vector2(964, 1152)
 flip_v = true
 
 [node name="Vial10" parent="." instance=ExtResource("13_fcotk")]
+z_index = 0
 position = Vector2(1083, 1138)
 
 [node name="Vial11" parent="." instance=ExtResource("13_fcotk")]
+z_index = 0
 position = Vector2(166, 219)
 
 [node name="Vial12" parent="." instance=ExtResource("12_7cpxb")]
+z_index = 0
 position = Vector2(289, 164)
 
 [node name="Vial13" parent="." instance=ExtResource("13_fcotk")]
+z_index = 0
 position = Vector2(1448, 1511)
 flip_h = true
 
 [node name="Vial14" parent="." instance=ExtResource("14_jlnr8")]
+z_index = 0
 position = Vector2(100, 472)
 
 [node name="Vial15" parent="." instance=ExtResource("14_jlnr8")]
 position = Vector2(1023, 55)
 
 [node name="Vial16" parent="." instance=ExtResource("14_jlnr8")]
+z_index = 0
 position = Vector2(992, 1523)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
@@ -153,6 +150,6 @@ energy = 0.35
 texture = ExtResource("15_2hhih")
 
 [node name="Vial17" parent="." instance=ExtResource("16_6iarn")]
+z_index = 0
 position = Vector2(651, 290)
 scale = Vector2(0.2965, 0.2965)
-

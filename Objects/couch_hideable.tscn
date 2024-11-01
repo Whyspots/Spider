@@ -75,7 +75,6 @@ texture = ExtResource("2_q3ke2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-103, -122.375)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_b2gil")
 
 [node name="objectdarken" type="AnimationPlayer" parent="."]
